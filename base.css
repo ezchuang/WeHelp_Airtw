@@ -1,0 +1,168 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+* html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+
+* li {
+  list-style: none;
+}
+
+* a {
+  text-decoration: none;
+  color: black;
+}
+
+.flex {
+  display: flex;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ /*設定footer本身高度*/
+.footer {
+  width: 100%;
+  height: 104px;
+  background-color: #757575;
+  justify-content: center;
+  align-items: center;  
+}
+.footer_div_p {
+  font-size: 20px;
+  color: white;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  margin-top: 54px;
+  min-height: calc(100vh - 104px - 54px); /*100vh - footer高度 - header高度*/
+}
+.header {
+  width: 100%;
+  height: 54px;
+  justify-content: center;
+  position: fixed;
+  background-color: white;
+  z-index: 1000000;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+.div_header {
+  height: 34px;
+  width: 1200px;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+
+.header_div_li_a {
+  font-size: 29px;
+  color: #448899;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+}
+
+.header_div_div_li {
+  padding: 10px;
+  align-items: center;
+}
+
+.header_div {
+  flex-direction: row;
+}
+
+.header_div_div {
+  width: 175px;
+  height: 34px;
+}
+
+.header_div_div_li_button {
+  font-size: 16px;
+  color: #666666;
+  background-color: white;
+}
