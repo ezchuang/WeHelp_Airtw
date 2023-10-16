@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./index.css">
     <title>台灣空氣污染即時資訊</title>
 </head>
 <header class="header">
   <div class="div_header flex container">
     <div class="header_div">
-      <li class="header_div_li"><a class="header_div_li_a" href="/">台灣空氣污染即時資訊</a></li>
+      <li class="header_div_li"><a class="header_div_li_a" href="/">Air Quality</a></li>
+    </div>
+    <div class="header_div_other">
+      <li class="header_div_other_li"><a class="header_div_other_li_a" href="/feature">未來預報</a></li>
+      <li class="header_div_other_li"><a class="header_div_other_li_a" href="/previous">歷史監測資料</a></li>
     </div>
   </div>
 </header>
@@ -19,22 +24,58 @@
             <!-- 主要內容放這邊, css 請依照功能命名，並與base.css分開撰寫～ -->
 
             <!-- 全國空氣品質及時監測 Lulu, zhui, wunyu-->
-            <div class="realtimeAirMonitor_div"></div> 
+            <div class="realtimeAirMonitor_div" id ="realtimeAirMonitor_div">
+              <div class="realtimeAirMonitor_div_div" id="realtimeAirMonitor_div_div">
+
+                <div class="realtimeAirMonitorTitle_div" id="realtimeAirMonitorTitle_div">
+                  <img src="./static/icon/data-science 1.png" alt="" style="width: 40px;height: 40px;">
+                  <span>全國空氣品質及時監測</span>
+                </div>
+                <div class="realtimeAirMonitor_div_content" id="realtimeAirMonitor_div_content">
+                  <div class="realtimeAirMonitor_div_content_left">
+                    <!-- 需要修改 -->
+                    <img src="./static/picture/roadmap.png" alt=""> 
+                  </div>
+                  <div class="realtimeAirMonitor_div_content_right">
+                    <img src="./static/picture/realtime_monitor.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div> 
             
-
+            
             <!-- 測站周圍影像 no assign-->
-            <div class="realtimePic_div"></div>
+            <div class="realtimePic_div">
+              <div class="realtimePic_div_div">
+                <div class="realtimePicTitle_div">
+                  <img src="./static/icon//pictures1.png" alt="" style="width: 40px;height: 40px;">
+                  <span>測站周圍影像</span>
+                </div>
+                <img src="./static/picture/realTimePicTest.jpg" alt="" style="max-height: 400px;">
+                
 
-
+              </div>
+            </div>
+            
+            
             <!-- 空氣品質指標 no assign -->
-            <div class="airQulityIndex_div"></div>
+            <div class="airQulityIndex_div">
+              <div class="airQulityIndex_div_div">
+                <div class="airQulityIndexTitle_div">
+                  <img src="./static/icon/index.png" alt="">
+                  <span>空氣品質指標</span>
+                </div>
+                <img src="./static/picture/Aqi.jpg" alt="" style="max-width: 800px;">
+
+              </div>
+            </div>
 
         </div>
       </div>
     <footer class="footer flex">
     <div class="footer flex">
         <div class="footer_div">
-        <p class="footer_div_p">COPYRIGHT @ 2023 台灣空氣污染即時資訊</p>
+        <p class="footer_div_p">COPYRIGHT @ 2023 Air Quality</p>
         </div>
     </div>
     </footer>

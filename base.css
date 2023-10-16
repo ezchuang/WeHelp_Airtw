@@ -7,64 +7,9 @@
   font-family: "Noto Sans TC", sans-serif;
 }
 
-* html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-font,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
+* html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,
+sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,
+th,td {
   margin: 0;
   padding: 0;
   border: 0;
@@ -121,9 +66,10 @@ body {
 .header {
   width: 100%;
   height: 54px;
+  display: flex;
   justify-content: center;
   position: fixed;
-  background-color: white;
+  background-color: rgba(193, 218, 255, 1);
   z-index: 1000000;
   top: 0;
   left: 0;
@@ -132,18 +78,22 @@ body {
 .div_header {
   height: 34px;
   width: 1200px;
-  background-color: white;
   justify-content: space-between;
   align-items: center;
   margin: 10px;
 }
-
-
 .header_div_li_a {
   font-size: 29px;
   color: #448899;
   font-style: normal;
   font-weight: 700;
+  line-height: 34px;
+}
+.header_div_other_li_a {
+  font-size: 20px;
+  color:rgb(34, 34, 34);
+  font-style: normal;
+  font-weight: 400;
   line-height: 34px;
 }
 
@@ -165,4 +115,9 @@ body {
   font-size: 16px;
   color: #666666;
   background-color: white;
+}
+
+.header_div_other { 
+  display: flex;
+  gap:20px;
 }
