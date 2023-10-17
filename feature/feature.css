@@ -41,17 +41,17 @@ tr:hover {
     background-color: #e6e6e6;
 }
 
-.backgorund-red {
-    background-color: #ff5c5c;
+.background-red {
+    color:  #ff5c5c;
 }
-.backgorund-orange {
-    background-color: orange;
+.background-orange {
+    color:  rgb(118, 77, 2);
 }
-.backgorund-yellow {
-    background-color: rgb(255, 255, 131);
+.background-yellow {
+    color:  rgb(175, 175, 2);
 }
-.backgorund-green {
-    background-color: rgba(150, 250, 150, 0.796);
+.background-green {
+    color:  rgb(4, 75, 4);
 }
 
 
