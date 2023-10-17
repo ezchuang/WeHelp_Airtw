@@ -3,4 +3,87 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
+    gap: 20px;
+    padding: 40px 0px ;
+}
+
+
+
+
+
+/* table style */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #cccccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    font-weight: 250;
+}
+
+th {
+    background-color: #bfeafa84;
+    font-weight: 500;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #e6e6e6;
+}
+
+.backgorund-red {
+    background-color: #ff5c5c;
+}
+.backgorund-orange {
+    background-color: orange;
+}
+.backgorund-yellow {
+    background-color: rgb(255, 255, 131);
+}
+.backgorund-green {
+    background-color: rgba(150, 250, 150, 0.796);
+}
+
+
+.featureAqiTitle_div, .featureAqiUpdateTime_div, .featureAqiUpdateTime_div, .featureDesciptionTitle_div, .featureDesciprionContent_div {
+    width: 1200px;
+}
+
+
+.featureAqiTitle_div,.featureDesciptionTitle_div {
+    height: 50px;
+    background-color: rgba(222, 241, 255, 1);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.featureAqiTitle_span,.featureDesciptionTitle_span {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.featureAqiUpdateTime_div {
+    padding-left: 20px;
+}
+
+.featureDesciprionContent_div{
+    display: flex;
+    justify-content: center;
+}
+
+.featureDesciprionContent_p { 
+    max-width: 800px;
+    font-weight: 330;
+    font-size: 16px;
 }

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./base.css">
-    <link rel="stylesheet" href="./index.css">
-    <title>台灣空氣污染即時資訊</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./index.css">
+  <title>台灣空氣污染即時資訊</title>
 </head>
 <header class="header">
   <div class="div_header flex container">
@@ -18,66 +19,168 @@
     </div>
   </div>
 </header>
+
 <body>
-      <div class="wrapper">
-        <div class="content">
-            <!-- 主要內容放這邊, css 請依照功能命名，並與base.css分開撰寫～ -->
+  <div class="wrapper">
+    <div class="content">
+      <!-- 主要內容放這邊, css 請依照功能命名，並與base.css分開撰寫～ -->
 
-            <!-- 全國空氣品質及時監測 Lulu, zhui, wunyu-->
-            <div class="realtimeAirMonitor_div" id ="realtimeAirMonitor_div">
-              <div class="realtimeAirMonitor_div_div" id="realtimeAirMonitor_div_div">
+      <!-- 全國空氣品質及時監測 Lulu, zhui, wunyu-->
+      <div class="realtimeAirMonitor_div" id="realtimeAirMonitor_div">
+        <div class="realtimeAirMonitor_div_div" id="realtimeAirMonitor_div_div">
 
-                <div class="realtimeAirMonitorTitle_div" id="realtimeAirMonitorTitle_div">
-                  <img src="./static/icon/data-science 1.png" alt="" style="width: 40px;height: 40px;">
-                  <span>全國空氣品質及時監測</span>
+          <div class="realtimeAirMonitorTitle_div" id="realtimeAirMonitorTitle_div">
+            <img src="./static/icon/data-science 1.png" alt="" style="width: 40px;height: 40px;">
+            <span>全國空氣品質及時監測</span>
+          </div>
+          <div class="realtimeAirMonitor_div_content" id="realtimeAirMonitor_div_content">
+            <div class="realtimeAirMonitor_div_content_left">
+              <!-- 需要修改成地圖 -->
+              <img src="./static/picture/roadmap.png" alt="">
+            </div>
+            <div class="realtimeAirMonitor_content_right_div">
+              <div class="realtimeAirMonitor_content_rightup_div">
+                <div class="realtimeAirMonitor_content_right_resultTime_div">
+                  <span>發布時間：</span>
+                  <span> YYYY/MM/DD hh:mm:ss</span>
                 </div>
-                <div class="realtimeAirMonitor_div_content" id="realtimeAirMonitor_div_content">
-                  <div class="realtimeAirMonitor_div_content_left">
-                    <!-- 需要修改 -->
-                    <img src="./static/picture/roadmap.png" alt=""> 
+                <!-- 下拉式選單 -->
+                <div class="realtimeAirMonitor_content_right_select_div">
+                  <div class="realtimeAirMonitor_content_right_select_left_div">
+                    <select class="realtimeAirMonitor_content_right_select_left_select">
+                      <option value="">請選擇觀測站</option>
+                    </select>
+                    <p>O3 8hr</p>
+                    <p>指標污染物</p>
+                    <p>普通</p>
                   </div>
-                  <div class="realtimeAirMonitor_div_content_right">
-                    <img src="./static/picture/realtime_monitor.png" alt="">
+                  <div class="realtimeAirMonitor_content_right_select_rigth_div">
+                    <p class="realtimeAirMonitor_content_right_aqi_p">99</p>
+                    <p>空氣污染指標 AQI</p>
+                    <div class="realtimeAirMonitor_content_right_status_div">我是顏色方塊</div>
+
                   </div>
+
                 </div>
+
               </div>
-            </div> 
-            
-            
-            <!-- 測站周圍影像 no assign-->
-            <div class="realtimePic_div">
-              <div class="realtimePic_div_div">
-                <div class="realtimePicTitle_div">
-                  <img src="./static/icon//pictures1.png" alt="" style="width: 40px;height: 40px;">
-                  <span>測站周圍影像</span>
-                </div>
-                <img src="./static/picture/realTimePicTest.jpg" alt="" style="max-height: 400px;">
-                
+              <div class="realtimeAirMonitor_content_rightdown_div">
+                <!-- table -->
+                <!-- O3 -->
+                <div class="realtimeAirMonitor_content_rightdown_table_div">
 
+                  <table>
+                    <tr>
+                      <td>O3</td>
+                      <td>8 小時移動平均</td>
+                      <td>64</td>
+                      <td>ppb</td>
+                    </tr>
+                    <tr>
+                      <td>臭氧</td>
+                      <td>小時濃度</td>
+                      <td>72</td>
+                      <td>ppb</td>
+                    </tr>
+                  <!-- PM2.5 -->
+                    <tr>
+                      <td>PM2.5</td>
+                      <td>移動平均</td>
+                      <td>64</td>
+                      <td>ug/m3</td>
+                    </tr>
+                    <tr>
+                      <td>細懸浮微粒</td>
+                      <td>小時濃度</td>
+                      <td>72</td>
+                      <td>ug/m3</td>
+                    </tr>
+                  <!-- PM10 -->
+                    <tr>
+                      <td>PM10</td>
+                      <td>移動平均</td>
+                      <td>64</td>
+                      <td>ug/m3</td>
+                    </tr>
+                    <tr>
+                      <td>細懸浮微粒</td>
+                      <td>小時濃度</td>
+                      <td>72</td>
+                      <td>ug/m3</td>
+                    </tr>
+                  <!-- CO -->
+                    <tr>
+                      <td>CO</td>
+                      <td>8 小時移動平均</td>
+                      <td>64</td>
+                      <td>ppm</td>
+                    </tr>
+                    <tr>
+                      <td>一氧化碳</td>
+                      <td>小時濃度</td>
+                      <td>72</td>
+                      <td>ppm</td>
+                    </tr>
+                  <!-- SO2 -->
+                    <tr>
+                      <td>SO2<br>二氧化硫</td>
+                      <td>小時濃度</td>
+                      <td>64</td>
+                      <td>ppb</td>
+                    </tr>
+                  <!-- NO2 -->
+                    <tr>
+                      <td>NO2<br>二氧化氮</td>
+                      <td>小時濃度</td>
+                      <td>64</td>
+                      <td>ppb</td>
+                    </tr>
+                  </table>
+                </div>
+<!-- 
+                <img src="./static/picture/realtime_monitor.png" alt=""> -->
               </div>
             </div>
-            
-            
-            <!-- 空氣品質指標 no assign -->
-            <div class="airQulityIndex_div">
-              <div class="airQulityIndex_div_div">
-                <div class="airQulityIndexTitle_div">
-                  <img src="./static/icon/index.png" alt="">
-                  <span>空氣品質指標</span>
-                </div>
-                <img src="./static/picture/Aqi.jpg" alt="" style="max-width: 800px;">
+          </div>
+        </div>
+      </div>
 
-              </div>
-            </div>
+
+      <!-- 測站周圍影像 no assign-->
+      <div class="realtimePic_div">
+        <div class="realtimePic_div_div">
+          <div class="realtimePicTitle_div">
+            <img src="./static/icon//pictures1.png" alt="" style="width: 40px;height: 40px;">
+            <span>測站周圍影像</span>
+          </div>
+          <img src="./static/picture/realTimePicTest.jpg" alt="" style="max-height: 400px;">
+
 
         </div>
       </div>
-    <footer class="footer flex">
-    <div class="footer flex">
-        <div class="footer_div">
-        <p class="footer_div_p">COPYRIGHT @ 2023 Air Quality</p>
+
+
+      <!-- 空氣品質指標 no assign -->
+      <div class="airQulityIndex_div">
+        <div class="airQulityIndex_div_div">
+          <div class="airQulityIndexTitle_div">
+            <img src="./static/icon/index.png" alt="">
+            <span>空氣品質指標</span>
+          </div>
+          <img src="./static/picture/Aqi.jpg" alt="" style="max-width: 800px;">
+
         </div>
+      </div>
+
     </div>
-    </footer>
+  </div>
+  <footer class="footer flex">
+    <div class="footer flex">
+      <div class="footer_div">
+        <p class="footer_div_p">COPYRIGHT @ 2023 Air Quality</p>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>
