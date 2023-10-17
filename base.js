@@ -4,14 +4,14 @@ var siteResultGlobal; //cite data global variable
 async function indexMain(){
     let responeData = await classifySite()
     siteResultGlobal = responeData
-    insertMonitoringStation("台中市")
+    insertMonitoringStation("臺中市") //預設為臺中市, 網頁剛載入時會執行一次
     
     
 }
 
 
 
-// 生成觀測站資料
+// 生成觀測站資料 輸入縣市名稱為自動生成該縣市的觀測站資料在 select 中
 function insertMonitoringStation(stationName){
     let monitoringStationSelect = document.querySelector(".realtimeAirMonitor_content_right_select_left_select")
     monitoringStationSelect.innerHTML = ""
