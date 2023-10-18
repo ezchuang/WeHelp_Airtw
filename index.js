@@ -1,24 +1,16 @@
 //網頁主要架構動態生成
 createRight();
 
-//新增監聽事件讓使用者選擇觀測站時，觀測站的資料會跟著改變 (尚未完成)
-document.querySelector(".realtimeAirMonitor_content_right_select_left_select").addEventListener("change", e =>{
-  let stationName = e.target.value //onchange 觀測站名稱
-  console.log(stationName)
 
-  //這邊可以放入生成 觀測站資料的 function
-  
-})
 
 
 asyncMain(); 
 var siteResultGlobal; //site data global variable, 這個變數是各縣市觀測站的資料 key 縣市：value 觀測站名稱array
 
-//主要處理網頁生成動態處理的地方
+//主要處理網頁生成動態處理的需要的資料
 async function asyncMain(){
-    let responeData = await classifySite()
-    siteResultGlobal = responeData
-    insertMonitoringStation("臺北市") //預設為臺北市, 網頁剛載入時會執行一次
+  let responeData = await classifySite()
+  siteResultGlobal = responeData
 }
 
 
@@ -27,13 +19,25 @@ let paths = document.querySelectorAll("path");
 
 paths.forEach(function(path){
   path.addEventListener("click", function(e){//e事件參數跟function一起進來
-      let tagname = this.getAttribute("data-name"); 
-      console.log(tagname);
-      createRight(tagname);
-
-    });
+    let tagname = this.getAttribute("data-name"); 
+    console.log("你現在選擇的縣市名稱："+tagname);
+    createRight(tagname);
+    insertMonitoringStation(tagname);
+    addEventListenerForSelectMonitor();
+    
+  });
 });
 
+//新增監聽事件讓使用者選擇觀測站時，觀測站的資料會跟著改變 (尚未完成)
+function addEventListenerForSelectMonitor(){
+  document.querySelector(".realtimeAirMonitor_content_right_select_left_select").addEventListener("change", e =>{
+    let stationName = e.target.value //onchange 觀測站名稱
+    console.log("你現在選擇的觀測站名稱："+stationName)
+  
+    //這邊可以放入生成 觀測站資料的 function
+    
+  })
+}
 
 function createRight(tagname){
 
