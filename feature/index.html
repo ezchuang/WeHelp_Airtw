@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../base.css">
   <link rel="stylesheet" href="./feature.css">
+  <script src="feature.js"></script>
   <title>台灣空氣污染即時資訊</title>
 </head>
 <header class="header">
@@ -32,7 +33,7 @@
       <!-- 資料發布時間：2023/10/16 -->
       <div class="featureAqiUpdateTime_div">
         <span>資料發布時間：</span>
-        <span class="faetureAqiUpdateTime_span" id="faetureAqiUpdateTime_span"> YYYY / MM / DD</span>
+        <span class="faetureAqiUpdateTime_span" id="faetureAqiUpdateTime_span"></span>
       </div>
 
 
@@ -43,10 +44,10 @@
             <thead>
               <tr>
                 <th id="date">日期</th>
-                <th colspan="2" id="date1">MM/DD (二)</th>
-                <th colspan="2" id="date2">MM/DD (三)</th>
-                <th colspan="2" id="date3">MM/DD (四)</th>
-                <th colspan="2" id="date4">MM/DD (五)</th>
+                <th colspan="2" id="date1"></th>
+                <th colspan="2" id="date2"></th>
+                <th colspan="2" id="date3"></th>
+                <th colspan="2" id="date4"></th>
               </tr>
             </thead>
             <tbody>
@@ -78,193 +79,193 @@
               td id radte10 = 澎湖 -->
               <tr>
                 <th id="rdate0" headers="date">北部</th>
-                  <td headers="rdate0 date1 aqi1">
-                    <span>NA</span>
-                    <td headers="rdate0 date1 index1">臭氧八小時<br>細懸浮微粒</td>
-                  </td>
-                  <td headers="rdate0 date2 aqi2">
-                    <span>NA</span>
-                    <td headers="rdate0 date2 index2">臭氧八小時<br>細懸浮微粒</td>
-                  </td>
-                  <td headers="rdate0 date3 aqi3">
-                    <span>NA</span>
-                  <td headers="rdate0 date3 index3">臭氧八小時<br>細懸浮微粒</td>
-                  </td>
-                  <td headers="rdate0 date4 aqi4">
-                    <span>NA</span>
-                  <td headers="rdate0 date4 index4">臭氧八小時<br>細懸浮微粒</td>
-                  </td>
+                <td headers="rdate0 date1 aqi1">
+                  <span></span>
+                <td headers="rdate0 date1 index1"><br></td>
+                </td>
+                <td headers="rdate0 date2 aqi2">
+                  <span></span>
+                <td headers="rdate0 date2 index2"><br></td>
+                </td>
+                <td headers="rdate0 date3 aqi3">
+                  <span></span>
+                <td headers="rdate0 date3 index3"><br></td>
+                </td>
+                <td headers="rdate0 date4 aqi4">
+                  <span></span>
+                <td headers="rdate0 date4 index4"><br></td>
+                </td>
               </tr>
               <tr>
                 <th id="rdate1" headers="date">竹苗</th>
                 <td headers="rdate1 date1 aqi1">
-                  <span>NA</span>
-                <td headers="rdate1 date1 index1">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate1 date1 index1"><br></td>
                 </td>
                 <td headers="rdate1 date2 aqi2">
-                  <span>NA</span>
-                <td headers="rdate1 date2 index2">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate1 date2 index2"><br></td>
                 </td>
                 <td headers="rdate1 date3 aqi3">
-                  <span>NA</span>
-                <td headers="rdate1 date3 index3">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate1 date3 index3"><br></td>
                 </td>
                 <td headers="rdate1 date4 aqi4">
-                  <span>NA</span>
-                <td headers="rdate1 date4 index4">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate1 date4 index4"><br></td>
                 </td>
               </tr>
               <tr>
                 <th id="rdate2" headers="date">中部</th>
                 <td headers="rdate2 date1 aqi1">
-                  <span>NA</span>
+                  <span></span>
                 </td>
-                <td headers="rdate2 date1 index1">臭氧八小時<br>細懸浮微粒</td>
+                <td headers="rdate2 date1 index1"><br></td>
                 <td headers="rdate2 date2 aqi2">
-                  <span>NA</span>
-                <td headers="rdate2 date2 index2">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate2 date2 index2"><br></td>
                 </td>
                 <td headers="rdate2 date3 aqi3">
-                  <span>NA</span>
-                <td headers="rdate2 date3 index3">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate2 date3 index3"><br></td>
                 </td>
                 <td headers="rdate2 date4 aqi4">
-                  <span>NA</span>
-                <td headers="rdate2 date4 index4">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate2 date4 index4"><br></td>
                 </td>
               </tr>
               <tr>
                 <th id="rdate3" headers="date">雲嘉南</th>
                 <td headers="rdate3 date1 aqi1">
-                  <span>NA</span>
-                <td headers="rdate3 date1 index1">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate3 date1 index1"><br></td>
                 </td>
                 <td headers="rdate3 date2 aqi2">
-                  <span>NA</span>
-                <td headers="rdate3 date2 index2">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate3 date2 index2"><br></td>
                 </td>
                 <td headers="rdate3 date3 aqi3">
-                  <span>NA</span>
-                <td headers="rdate3 date3 index3">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate3 date3 index3"><br></td>
                 </td>
                 <td headers="rdate3 date4 aqi4">
-                  <span>NA</span>
-                <td headers="rdate3 date4 index4">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate3 date4 index4"><br></td>
                 </td>
               </tr>
               <tr>
                 <th id="rdate4" headers="date">高屏</th>
                 <td headers="rdate4 date1 aqi1">
-                  <span>NA</span>
-                <td headers="rdate4 date1 index1">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate4 date1 index1"><br></td>
                 </td>
                 <td headers="rdate4 date2 aqi2">
-                  <span>NA</span>
-                <td headers="rdate4 date2 index2">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate4 date2 index2"><br></td>
                 </td>
                 <td headers="rdate4 date3 aqi3">
-                  <span>NA</span>
-                <td headers="rdate4 date3 index3">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate4 date3 index3"><br></td>
                 </td>
                 <td headers="rdate4 date4 aqi4">
-                  <span>NA</span>
-                <td headers="rdate4 date4 index4">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate4 date4 index4"><br></td>
                 </td>
               </tr>
               <tr>
                 <th id="rdate5" headers="date">宜蘭</th>
                 <td headers="rdate5 date1 aqi1">
-                  <span>NA</span>
-                <td headers="rdate5 date1 index1">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate5 date1 index1"><br></td>
                 </td>
                 <td headers="rdate5 date2 aqi2">
-                  <span>NA</span>
-                <td headers="rdate5 date2 index2">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate5 date2 index2"><br></td>
                 </td>
                 <td headers="rdate5 date3 aqi3">
-                  <span>NA</span>
-                <td headers="rdate5 date3 index3">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate5 date3 index3"><br></td>
                 </td>
                 <td headers="rdate5 date4 aqi4">
-                  <span>NA</span>
-                <td headers="rdate5 date4 index4">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate5 date4 index4"><br></td>
                 </td>
               </tr>
               <tr>
                 <th id="rdate6" headers="date">花東</th>
                 <td headers="rdate6 date1 aqi1">
-                  <span>NA</span>
-                <td headers="rdate6 date1 index1">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate6 date1 index1"><br></td>
                 </td>
                 <td headers="rdate6 date2 aqi2">
-                  <span>NA</span>
-                <td headers="rdate6 date2 index2">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate6 date2 index2"><br></td>
                 </td>
                 <td headers="rdate6 date3 aqi3">
-                  <span>NA</span>
-                <td headers="rdate6 date3 index3">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate6 date3 index3"><br></td>
                 </td>
                 <td headers="rdate6 date4 aqi4">
-                  <span>NA</span>
-                <td headers="rdate6 date4 index4">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate6 date4 index4"><br></td>
                 </td>
               </tr>
               <tr>
                 <th id="rdate7" headers="date">馬祖</th>
                 <td headers="rdate7 date1 aqi1">
-                  <span>NA</span>
-                <td headers="rdate7 date1 index1">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate7 date1 index1"><br></td>
                 </td>
                 <td headers="rdate7 date2 aqi2">
-                  <span>NA</span>
-                <td headers="rdate7 date2 index2">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate7 date2 index2"><br></td>
                 </td>
                 <td headers="rdate7 date3 aqi3">
-                  <span>NA</span>
-                <td headers="rdate7 date3 index3">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate7 date3 index3"><br></td>
 
                 </td>
                 <td headers="rdate7 date4 aqi4">
-                  <span>NA</span>
-                <td headers="rdate7 date4 index4">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate7 date4 index4"><br></td>
                 </td>
               </tr>
               <tr>
                 <th id="rdate8" headers="date">金門</th>
                 <td headers="rdate8 date1 aqi1">
-                  <span>NA</span>
-                <td headers="rdate8 date1 index1">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate8 date1 index1"><br></td>
                 </td>
                 <td headers="rdate8 date2 aqi2">
-                  <span>NA</span>
-                <td headers="rdate8 date2 index2">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate8 date2 index2"><br></td>
                 </td>
                 <td headers="rdate8 date3 aqi3">
-                  <span>NA</span>
-                <td headers="rdate8 date3 index3">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate8 date3 index3"><br></td>
                 </td>
                 <td headers="rdate8 date4 aqi4">
-                  <span>NA</span>
-                <td headers="rdate8 date4 index4">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate8 date4 index4"><br></td>
                 </td>
               </tr>
               <tr>
                 <th id="rdate9" headers="date">澎湖</th>
                 <td headers="rdate9 date1 aqi1">
-                  <span>NA</span>
-                <td headers="rdate9 date1 index1">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate9 date1 index1"><br></td>
                 </td>
                 <td headers="rdate9 date2 aqi2">
-                  <span>NA</span>
-                <td headers="rdate9 date2 index2">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate9 date2 index2"><br></td>
                 </td>
                 <td headers="rdate9 date3 aqi3">
-                  <span>NA</span>
-                <td headers="rdate9 date3 index3">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate9 date3 index3"><br></td>
                 </td>
                 <td headers="rdate9 date4 aqi4">
-                  <span>NA</span>
-                <td headers="rdate9 date4 index4">臭氧八小時<br>細懸浮微粒</td>
+                  <span></span>
+                <td headers="rdate9 date4 index4"><br></td>
                 </td>
               </tr>
             </tbody>
@@ -278,10 +279,12 @@
         <span class="featureDesciptionTitle_span">預報說明</span>
       </div>
       <div class="featureDesciprionContent_div">
-        <p class="featureDesciprionContent_p">今（16）日受東北季風影響，東北風挾帶境外污染物移入影響臺灣，中南部地區位於下風處，擴散條件較差，易累積污染物，午後受光化作用影響，臭氧濃度易上升。依16時監測結果，竹苗、宜蘭、花東空品區為「普通」等級；北部、中部、雲嘉南、高屏空品區及馬祖、金門、澎湖為「橘色提醒」等級。
+        <p class="featureDesciprionContent_p">
+          今（16）日受東北季風影響，東北風挾帶境外污染物移入影響臺灣，中南部地區位於下風處，擴散條件較差，易累積污染物，午後受光化作用影響，臭氧濃度易上升。依16時監測結果，竹苗、宜蘭、花東空品區為「普通」等級；北部、中部、雲嘉南、高屏空品區及馬祖、金門、澎湖為「橘色提醒」等級。
           依監測資料及氣象署16日16時氣象資料顯示：17日受東北季風影響，東北風挾帶境外污染物移入影響臺灣，影響情況視上游濃度累積而有所變化，西半部須留意午後光化作用致使臭氧濃度上升，中南部位於下風處，擴散條件較差，污染物易累積。竹苗、宜蘭、花東空品區為「普通」等級，竹苗短時間可能達橘色提醒等級；北部、中部、雲嘉南、高屏空品區及馬祖、澎湖為「橘色提醒」等級；金門為「紅色警示」等級。
           18日東北季風稍減弱，環境風場轉為東北東風至偏東風，中南部位於下風處，污染物易累積，午後受光化作用影響，臭氧濃度易上升。宜蘭、花東空品區為「良好」等級；北部、竹苗空品區為「普通」等級；中部、雲嘉南、高屏空品區為「橘色提醒」等級。
-          19日東北季風稍減弱，環境風場仍為偏東風，西半部位於背風側，風速較弱擴散條件差，污染物易累積，午後受光化作用影響，臭氧濃度易上升。宜蘭、花東空品區為「良好」等級；北部、竹苗空品區為「普通」等級；中部、雲嘉南、高屏空品區為「橘色提醒」等級。</p>
+          19日東北季風稍減弱，環境風場仍為偏東風，西半部位於背風側，風速較弱擴散條件差，污染物易累積，午後受光化作用影響，臭氧濃度易上升。宜蘭、花東空品區為「良好」等級；北部、竹苗空品區為「普通」等級；中部、雲嘉南、高屏空品區為「橘色提醒」等級。
+        </p>
       </div>
 
 
