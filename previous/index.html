@@ -39,51 +39,61 @@
         <div class="queryForm_cotainer_div">
           <div class="queryForm_cotainer_locationItem_div">
             <img src="../static/icon/location.png" alt="" style="width: 25px;height: 25px;">
-            <label for="">縣市：</label>
             <!-- 需要動態生成 -->
-            <select class="queryForm_cotainer_locationItem_select" name="locationCity" id="locationCity">
-              <option value="">請選擇城市</option>
-            </select>
-            &nbsp;&nbsp;   &nbsp;&nbsp;       
-            <label for="">監測站：</label>
-            <!-- 需要動態生成 -->
-            <select class="queryForm_cotainer_monitoringStation_select" name="monitoringStation" id="monitoringStation">
-              <option value="">請選擇監測站</option>
-            </select>
+            <div>
+              <label for="">縣市：</label>
+              <select class="queryForm_cotainer_locationItem_select" name="locationCity" id="locationCity">
+                <option value="">請選擇城市</option>
+              </select>
+            </div>
+            &nbsp;&nbsp; &nbsp;&nbsp;
+            <div>
+              <label for="">監測站：</label>
+              <!-- 需要動態生成 -->
+              <select class="queryForm_cotainer_monitoringStation_select" name="monitoringStation"
+                id="monitoringStation">
+                <option value="">請選擇監測站</option>
+              </select>
+
+            </div>
           </div>
           <div class="queryForm_cotainer_monitorItem_div">
-              <img src="../static/icon/chartIcon.png" alt="" style="width: 25px;height: 25px;">
-              <label for="">監測項目：</label>
-              <div class="queryForm_cotainer_monitorItem_checkbox_div">
-                <input id="queryForm_cotainer_monitorItem_checkbox_item0" type="checkbox" name="select_moniterItem"
+            <img src="../static/icon/chartIcon.png" alt="" style="width: 25px;height: 25px;">
+            <label for="">監測項目：</label>
+            <div class="queryForm_cotainer_monitorItem_checkbox_div">
+              <input id="queryForm_cotainer_monitorItem_checkbox_item0" type="checkbox" name="select_moniterItem"
                 value="pm2.5">
-                <label for="queryForm_cotainer_monitorItem_checkbox_item0" class="queryForm_cotainer_monitorItem_checkbox_label">PM2.5</label>
+              <label for="queryForm_cotainer_monitorItem_checkbox_item0"
+                class="queryForm_cotainer_monitorItem_checkbox_label"><span>PM<sub>2.5</sub></span></label>
 
-                <input id="queryForm_cotainer_monitorItem_checkbox_item1" type="checkbox" name="select_moniterItem"
-                  value="pm10">
-                <label for="queryForm_cotainer_monitorItem_checkbox_item1" class="queryForm_cotainer_monitorItem_checkbox_label">PM10</label> 
+              <input id="queryForm_cotainer_monitorItem_checkbox_item1" type="checkbox" name="select_moniterItem"
+                value="pm10">
+              <label for="queryForm_cotainer_monitorItem_checkbox_item1"
+                class="queryForm_cotainer_monitorItem_checkbox_label"><span>PM<sub>10</sub></span></label>
 
-                <input id="queryForm_cotainer_monitorItem_checkbox_item2" type="checkbox" name="select_moniterItem"
-                  value="co">
-                <label for="queryForm_cotainer_monitorItem_checkbox_item2" class="queryForm_cotainer_monitorItem_checkbox_label">CO</label>  
+              <input id="queryForm_cotainer_monitorItem_checkbox_item2" type="checkbox" name="select_moniterItem"
+                value="co">
+              <label for="queryForm_cotainer_monitorItem_checkbox_item2"
+                class="queryForm_cotainer_monitorItem_checkbox_label"><span>CO</span></label>
 
-                <input id="queryForm_cotainer_monitorItem_checkbox_item3" type="checkbox" name="select_moniterItem"
-                  value="no2">
-                <label for="queryForm_cotainer_monitorItem_checkbox_item3" class="queryForm_cotainer_monitorItem_checkbox_label">NO2</label>
+              <input id="queryForm_cotainer_monitorItem_checkbox_item3" type="checkbox" name="select_moniterItem"
+                value="no2">
+              <label for="queryForm_cotainer_monitorItem_checkbox_item3"
+                class="queryForm_cotainer_monitorItem_checkbox_label"><span>NO<sub>2</sub></span></label>
 
-                <input id="queryForm_cotainer_monitorItem_checkbox_item4" type="checkbox" name="select_moniterItem"
-                  value="so2">
-                <label for="queryForm_cotainer_monitorItem_checkbox_item4" class="queryForm_cotainer_monitorItem_checkbox_label">SO2</label>
+              <input id="queryForm_cotainer_monitorItem_checkbox_item4" type="checkbox" name="select_moniterItem"
+                value="so2">
+              <label for="queryForm_cotainer_monitorItem_checkbox_item4"
+                class="queryForm_cotainer_monitorItem_checkbox_label"><span>SO<sub>2</sub></span></label>
 
-                <!-- <input id="queryForm_cotainer_monitorItem_checkbox_item5" type="checkbox" name="select_moniterItem"
-                  value="o3">
-                <label for="queryForm_cotainer_monitorItem_checkbox_item5" class="queryForm_cotainer_monitorItem_checkbox_label">O3</label> -->
+              <input id="queryForm_cotainer_monitorItem_checkbox_item5" type="checkbox" name="select_moniterItem"
+                  value="aqi">
+                <label for="queryForm_cotainer_monitorItem_checkbox_item5" class="queryForm_cotainer_monitorItem_checkbox_label">AQI</label>
 
-              </div>
+            </div>
 
           </div>
-          <button class="queryForm_cotainer_button" id="queryForm_cotainer_monitorItem_button"
-          onclick="createChart()">
+          <button class="queryForm_cotainer_button" id="queryForm_cotainer_monitorItem_button" onclick="createChart()">
             <img src="../static/icon/search.png" alt="" style="width: 20px;height: 20px;">
             <span style="color: white;">更新查詢</span>
           </button>
@@ -113,4 +123,5 @@
 
 <script src="chart.js"></script>
 <script src="./site.js"></script>
+
 </html>
