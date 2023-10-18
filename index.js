@@ -1,4 +1,27 @@
+//網頁主要架構動態生成
 createRight();
+
+//新增監聽事件讓使用者選擇觀測站時，觀測站的資料會跟著改變 (尚未完成)
+document.querySelector(".realtimeAirMonitor_content_right_select_left_select").addEventListener("change", e =>{
+  let stationName = e.target.value //onchange 觀測站名稱
+  console.log(stationName)
+
+  //這邊可以放入生成 觀測站資料的 function
+  
+})
+
+
+asyncMain(); 
+var siteResultGlobal; //site data global variable, 這個變數是各縣市觀測站的資料 key 縣市：value 觀測站名稱array
+
+//主要處理網頁生成動態處理的地方
+async function asyncMain(){
+    let responeData = await classifySite()
+    siteResultGlobal = responeData
+    insertMonitoringStation("臺北市") //預設為臺北市, 網頁剛載入時會執行一次
+}
+
+
 
 let paths = document.querySelectorAll("path");
 
@@ -503,3 +526,83 @@ function createRight(tagname){
 
 }
 
+
+
+
+
+
+// 生成觀測站資料 輸入縣市名稱為自動生成該縣市的觀測站資料在 select 中, 指定的select 由 className 決定
+function insertMonitoringStation(stationName){
+    let monitoringStationSelect = document.querySelector(".realtimeAirMonitor_content_right_select_left_select")
+    monitoringStationSelect.innerHTML = ""
+    let option = document.createElement("option")
+    option.value = ""
+    option.innerText = "請選擇觀測站"
+    monitoringStationSelect.appendChild(option)
+    let stationArr = siteResultGlobal[stationName]
+
+  
+    stationArr.forEach(element=>{
+        let option = document.createElement("option")
+        option.value = element
+        option.innerText = element
+        monitoringStationSelect.appendChild(option)
+    })
+}
+
+
+
+
+// 站點資料請呼叫 async function classifySite()
+// 請注意 因需要 fetch API，所以 classifySite() return 的結果為非同步資料
+// 請於對應位置加上 call back or await 來處理
+async function getAPISite(){
+    let queryCluster = getParasSite()
+    let url = combineUrlSite(queryCluster)
+
+    let data = await fetch(url)
+    data = await data.json()
+
+    return data
+
+    function getParasSite(){
+        let queryCluster = {
+            "originUrl" : "https://data.moenv.gov.tw/api/v2/aqx_p_07",
+            "language" : null,
+            "offset" : null,
+            "limit" : null,
+            "apiKey" : "e8dd42e6-9b8b-43f8-991e-b3dee723a52d",
+        }
+    
+        return queryCluster
+    }
+    
+    
+    function combineUrlSite(queryCluster){
+        let url = `${queryCluster.originUrl}?api_key=${queryCluster.apiKey}`
+    
+        if (queryCluster.offset){
+            url += `&offset=${queryCluster.offset}`
+        }
+        if (queryCluster.limit){
+            url += `&limit=${queryCluster.limit}`
+        }
+    
+        return url
+    }
+}
+
+
+async function classifySite(){
+    let siteDataRaw = await getAPISite()
+    let siteData = {}
+    siteDataRaw.records.forEach(element => {
+        if (! Object.keys(siteData).includes(element.county)){
+            siteData[element.county] = [element.sitename]
+        }else{
+            siteData[element.county].push(element.sitename)
+        }
+    })
+
+    return siteData
+}
