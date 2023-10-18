@@ -1,8 +1,6 @@
 //網頁主要架構動態生成
 createRight();
-
-
-
+let dataGeneral;
 
 asyncMain(); 
 var siteResultGlobal; //site data global variable, 這個變數是各縣市觀測站的資料 key 縣市：value 觀測站名稱array
@@ -11,6 +9,7 @@ var siteResultGlobal; //site data global variable, 這個變數是各縣市觀�
 async function asyncMain(){
   let responeData = await classifySite()
   siteResultGlobal = responeData
+  await fetchAqiData();
 }
 
 
@@ -21,25 +20,99 @@ paths.forEach(function(path){
   path.addEventListener("click", function(e){//e事件參數跟function一起進來
     let tagname = this.getAttribute("data-name"); 
     console.log("你現在選擇的縣市名稱："+tagname);
-    createRight(tagname);
     insertMonitoringStation(tagname);
-    addEventListenerForSelectMonitor();
-    
+    // addEventListenerForSelectMonitor();
+    getDataBySitename(dataGeneral);
   });
 });
 
-//新增監聽事件讓使用者選擇觀測站時，觀測站的資料會跟著改變 (尚未完成)
-function addEventListenerForSelectMonitor(){
-  document.querySelector(".realtimeAirMonitor_content_right_select_left_select").addEventListener("change", e =>{
-    let stationName = e.target.value //onchange 觀測站名稱
-    console.log("你現在選擇的觀測站名稱："+stationName)
-  
-    //這邊可以放入生成 觀測站資料的 function
-    
-  })
+const apiKey = "e8dd42e6-9b8b-43f8-991e-b3dee723a52d";
+
+async function fetchAqiData() {
+    let requestData = await fetch('https://data.moenv.gov.tw/api/v2/aqx_p_432?&api_key=' + apiKey)
+    dataGeneral = await requestData.json()
+    // return requestData
 }
 
-function createRight(tagname){
+function getDataBySitename(dataGeneral) {
+    let selectElement = document.querySelector('.realtimeAirMonitor_content_right_select_left_select')
+    selectElement.addEventListener('change', function(sitename) {
+        let selectedSitename = sitename.target.value; // get sitename's value
+        // console.log(selectedSitename)
+        // get data from json according to sitename
+        let dataToShow = dataGeneral.records.find(record => record.sitename === selectedSitename);
+        console.log(dataToShow);
+        // updateTable(dataToShow);
+        createRight(selectedSitename, dataToShow);
+    });
+}
+
+// function triggerInitialSelection() {
+//     let selectElement = document.querySelector('.realtimeAirMonitor_content_right_select_left_select');
+//     let options = selectElement.options;
+//     selectElement.value = options[1].value;
+//     // Dispatching the change event ??
+//     selectElement.dispatchEvent(new Event('change'));
+// }
+
+
+// function updateTable(dataToShow) {
+//     document.querySelector('.publishtime_per_hour_span').innerText = dataToShow.publishtime;
+//     document.querySelector('.realtimeAirMonitor_content_right_aqi_p').innerText = dataToShow.aqi;
+//     document.querySelector('.O3_concentration_8_hours_div').innerText = dataToShow.o3_8hr;
+//     document.querySelector('.O3_concentration_per_hour_div').innerText = dataToShow.o3;
+//     document.querySelector('.PM25_concentration_average_moving_div').innerText = dataToShow['pm2.5_avg'];
+//     document.querySelector('.PM25_concentration_per_hour_div').innerText = dataToShow['pm2.5'];
+//     document.querySelector('.PM10_concentration_average_moving_div').innerText = dataToShow.pm10_avg;
+//     document.querySelector('.PM10_concentration_per_hour_div').innerText = dataToShow.pm10;
+//     document.querySelector('.CO_concentration_8_hours_div').innerText = dataToShow.co_8hr;
+//     document.querySelector('.CO_concentration_per_hour_div').innerText = dataToShow.co;
+//     document.querySelector('.SO2_concentration_per_hour_div').innerText = dataToShow.so2;
+//     document.querySelector('.NO2_concentration_per_hour_div').innerText = dataToShow.no2;
+//     updateAQIStatus(dataToShow.aqi)
+// }
+
+function updateAQIStatus(aqiValue) {
+    let status;
+    let color;
+    
+    if (aqiValue <= 50) {
+        status = "Good";
+        color = "green";
+    } else if (aqiValue <= 100) {
+        status = "Moderate";
+        color = "yellow";
+    } else if (aqiValue <= 150) {
+        status = "Unhealthy for sensitive groups";
+        color = "orange";
+    } else if (aqiValue <= 200) {
+        status = "Unhealthy";
+        color = "red";
+    } else if (aqiValue <= 300) {
+        status = "Very Unhealthy";
+        color = "purple";
+    } else {
+        status = "Hazardous";
+        color = "maroon";
+    }
+    
+    document.querySelector('.realtimeAirMonitor_content_right_aqi_p').innerText = aqiValue;
+    document.querySelector('.air_quality_index').innerText = status;
+    document.querySelector('.realtimeAirMonitor_content_right_status_div').style.backgroundColor = color;
+}
+// //新增監聽事件讓使用者選擇觀測站時，觀測站的資料會跟著改變 (尚未完成)
+// function addEventListenerForSelectMonitor(){
+//   document.querySelector(".realtimeAirMonitor_content_right_select_left_select").addEventListener("change", e =>{
+//     let stationName = e.target.value //onchange 觀測站名稱
+//     console.log("你現在選擇的觀測站名稱："+stationName)
+  
+//     //這邊可以放入生成 觀測站資料的 function
+    
+//   })
+// }
+
+//生成右邊欄位
+function createRight(tagname, dataToShow){
 
     // 外層容器 div
     let contentRightDiv = document.getElementById("contentRightDiv");
@@ -526,12 +599,7 @@ function createRight(tagname){
     newDiv.appendChild(tableDiv);
     contentRightDiv.appendChild(upperDiv);
     contentRightDiv.appendChild(newDiv);
-
-
 }
-
-
-
 
 
 
