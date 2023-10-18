@@ -63,19 +63,19 @@
     align-items: center;
     
 }
-.queryForm_cotainer_monitorItem_radio_div{
+.queryForm_cotainer_monitorItem_checkbox_div{
     display: flex;
     gap: 5px;
     flex-direction: row;
     align-items: center;
 
 }
-.queryForm_cotainer_monitorItem_radio_div>input{
+.queryForm_cotainer_monitorItem_checkbox_div>input{
     appearance: none;
     
 }
 
-.queryForm_cotainer_monitorItem_radio_label {
+.queryForm_cotainer_monitorItem_checkbox_label {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,7 +86,7 @@
     transition: color 0.3s, background-color 0.3s;
 }
 /* 當input被選中時，改變其後面的label的顏色 */
-.queryForm_cotainer_monitorItem_radio_div>input:checked + .queryForm_cotainer_monitorItem_radio_label {
+.queryForm_cotainer_monitorItem_checkbox_div>input:checked + .queryForm_cotainer_monitorItem_checkbox_label {
     background-color: rgb(57, 168, 248);
     color: white;
 }
