@@ -1,16 +1,68 @@
+.ti-b-25{
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+.r-16{
+    font-size: 16px;
+    font-weight: 400;
+    color: #666666;
+}
+.r-14{
+    font-size: 14px;
+    font-weight: 400;
+    color: #666666;
+    padding: 3px;
+}
+.b-20{
+    font-size: 20px;
+    font-weight: 700;
+    color: #06539A;
+}
+.b-25{
+    font-size: 25px;
+    font-weight: 700;
+    color: #06539A;
+}
+.b-50{
+    font-size: 50px;
+    line-height: 45px;
+    font-weight: 700;
+    color: #000;
+}
+.tr-b-25{
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 700;
+    color: #2377C5;
+}
+.tr-b-16{
+    font-size: 16px;
+    font-weight: 700;
+    color: #666666;
+}
+
 .content {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
 }
+.td-b-20{
+    font-size: 20px;
+    font-weight: 700;
+    color: #06539A;
+}
+.td-r-16{
+    font-size: 16px;
+    font-weight: 400;
+    color: #666666;
+    text-align: left;
+   
+}
+
+
 .realtimeAirMonitor_div, .realtimePic_div, .airQulityIndex_div{
-    /* display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 1200px;
-    align-items: flex-start;
-    margin-top: 40px; */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -23,7 +75,7 @@
 .realtimePic_div {
     background-color: rgba(240, 249, 255, 1);
 }
-.airQulityIndex_divs {
+.airQulityIndex_div {
     background-color: rgba(222, 241, 255, 1);
 }
 .realtimeAirMonitor_div_div, .realtimePic_div_div, .airQulityIndex_div_div{
@@ -68,39 +120,87 @@
     width: 100%;
     padding: 10px;
     align-items: center;
-}
-.realtimeAirMonitor_content_right_select_div{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-}
-.realtimeAirMonitor_content_right_select_left_div, .realtimeAirMonitor_content_right_select_rigth_div{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    background: #ffff;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #0000001a
 }
 
 .realtimeAirMonitor_content_rightdown_div {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
+    width: 450px;
+    padding: 10px;
+    background: #ffff;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #0000001a
 }
 
-/* test table */
+
+
+.realtimeAirMonitor_content_rightdown_new_aqi_div{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: center;
+}
+.realtimeAirMonitor_content_rightdown_new_aqi_circle_div{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    border: 12px solid orange;
+    padding-top: 10px;
+    margin-left: 25px;
+}
+
+/* map */
+.svg {
+  width: 600px;
+  height: 700px;
+  background: rgba(222, 241, 255, 1);
+}
+
+.svg path {
+  stroke: white;
+  cursor: pointer;
+  transition: 0.5s;
+  fill: #6fcd98;
+}
+
+ .svg path:hover {
+  fill: #0a7438;
+  transform: translate(-5px,-5px);
+} 
+
+/* table */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
-
-th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
+th{
+  padding: 8px;  
 }
-
-th {
-    background-color: #f9f9f9;
+td{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
 }
-
+sub{
+    font-size: 20px;
+}
+.realtimeAirMonitor_content_rightdown_table_o3_div,.realtimeAirMonitor_content_rightdown_table_pm10_div,.realtimeAirMonitor_content_rightdown_table_so2_div{
+    background: #DEF1FF;
+}
+.realtimeAirMonitor_content_rightdown_table_pm25_div,.realtimeAirMonitor_content_rightdown_table_co_div,.realtimeAirMonitor_content_rightdown_table_no2_div{
+    background: #F0F9FF;
+}
+.realtimeAirMonitor_content_rightdown_table_line_div{
+    border-bottom: 2px solid #C1DAFF;;
+}
