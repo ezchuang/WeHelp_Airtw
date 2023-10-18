@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../base.css">
   <link rel="stylesheet" href="./previous.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <title>台灣空氣污染即時資訊</title>
 </head>
 <header class="header">
@@ -74,36 +75,30 @@
                   value="so2">
                 <label for="queryForm_cotainer_monitorItem_checkbox_item4" class="queryForm_cotainer_monitorItem_checkbox_label">SO2</label>
 
-                <input id="queryForm_cotainer_monitorItem_checkbox_item5" type="checkbox" name="select_moniterItem"
+                <!-- <input id="queryForm_cotainer_monitorItem_checkbox_item5" type="checkbox" name="select_moniterItem"
                   value="o3">
-                <label for="queryForm_cotainer_monitorItem_checkbox_item5" class="queryForm_cotainer_monitorItem_checkbox_label">O3</label>
+                <label for="queryForm_cotainer_monitorItem_checkbox_item5" class="queryForm_cotainer_monitorItem_checkbox_label">O3</label> -->
 
               </div>
-             
-
 
           </div>
           <button class="queryForm_cotainer_button" id="queryForm_cotainer_monitorItem_button"
-          onclick="sentSearchMonitorData()">
-          <img src="../static/icon/search.png" alt="" style="width: 20px;height: 20px;">
-          <span style="color: white;">更新查詢</span>
-        </button>
+          onclick="createChart()">
+            <img src="../static/icon/search.png" alt="" style="width: 20px;height: 20px;">
+            <span style="color: white;">更新查詢</span>
+          </button>
         </div>
       </div>
 
       <div class="queryResultsTitle_div">
         <span class="queryResultsTitle_span1">逐日歷史濃度變化 </span>
-        <span class="queryResultsTitle_span2" id="queryResultsItem_span">PM2.5</span>
+        <span class="queryResultsTitle_span2" id="queryResultsItem_span"></span>
       </div>
 
       <div class="queryResultsChart">
-        <img src="../static/picture/chartExample.png" alt="">
+        <canvas id="myChart">Your browser does not support the canvas element.</canvas>
+        <!-- <img src="../static/picture/chartExample.png" alt=""> -->
       </div>
-
-
-
-
-
 
     </div>
   </div>
