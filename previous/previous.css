@@ -133,6 +133,13 @@
 
   }
 
+@media (max-width: 850px) {
+    .queryForm_div{
+        min-height: 300px;
+    }
+    
+}
+
 @media (max-width: 800px) {
     .queryForm_cotainer_div{
         gap: 20px;

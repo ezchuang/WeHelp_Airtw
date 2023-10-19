@@ -5,7 +5,7 @@ let siteResultGlobal; //site data global variable, 這個變數是各縣市觀�
 //網頁主要架構動態生成
 createRightUp("請點選地圖");
 createRightDown();
-
+addImgErrorEventListeners();
 
 asyncMain(); 
 
@@ -18,6 +18,8 @@ async function asyncMain(){
   createRightDown(dataToShow);
   rectColor(dataGeneral);//&&&&&&
   getDataByRects(dataGeneral)//&&&&&&
+  getSiteId()
+  changeImage("中山")
 }
 
 //網頁開始處理測站顏色&&&&&&
@@ -90,7 +92,9 @@ function getDataBySitename(dataGeneral) {
     
   let selectElement = document.querySelector('.realtimeAirMonitor_content_right_select_left_select')
   selectElement.addEventListener('change', function chooseSite(sitename) {
+
       let selectedSitename = sitename.target.value; // get sitename's value
+      changeImage(selectedSitename);
       let dataToShow = dataGeneral.records.find(record => record.sitename === selectedSitename);
       createRightDown(dataToShow);
       updateAQIStatus(dataToShow);
@@ -755,4 +759,11 @@ async function classifySite(){
     })
 
     return siteData
+}
+
+function addImgErrorEventListeners(){
+  let img = document.querySelector(".realtimePicTitle_img")
+  img.onerror = function() {
+      img.src = "./static/picture/pic_error.png";
+  };
 }
