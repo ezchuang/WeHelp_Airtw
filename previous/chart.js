@@ -5,7 +5,7 @@ function getSiteInput(){
     let siteElements = document.querySelectorAll("#monitoringStation")
     let siteArr = []
     siteElements.forEach(element => {
-        if (element.value == ""){
+        if (element.value === ""){
             return 
         }
         siteArr.push(element.value)
@@ -35,9 +35,9 @@ function putPrefixToKeyArr(keyArr){
     keyArr.forEach(element => {
         let key
 
-        if (element == "aqi"){
+        if (element === "aqi"){
             key = element
-        }else if (element == "pm2.5"){
+        }else if (element === "pm2.5"){
             key = "pm25subindex"
         }else{
             key = element + "subindex"
@@ -135,6 +135,7 @@ function preClassifyData(rawData, keyArr, keyArrHasPrefix){
                 labelsTemp[rawData[i].monitordate] = null
             }
             // 初步 data 分類
+            // if ()
             let catKey = `${rawData[i].sitename}-${keyArr[j].toUpperCase()}`
             if (! dataTemp.hasOwnProperty(catKey)){
                 dataTemp[catKey] = [rawData[i][keyArrHasPrefix[j]]]
@@ -178,6 +179,10 @@ function classifyData(dataTemp){
             y = "y1"
             labelName = `${dataKeys[i]} (μg/m3)`
         })
+        if ("aqi" === key){
+            y = "y1"
+            labelName = `${dataKeys[i]} (無單位)`
+        }
 
         // 建立切完的 data 資料結構
         data.push(
@@ -207,6 +212,37 @@ function setData(rawData, keyArr, keyArrHasPrefix){
 }
 
 
+function subtractOneHour(deltaDays) {
+    let newDate = new Date();
+
+    let currentYear = newDate.getFullYear();
+    let currentMonth = newDate.getMonth();
+    let currentDay = newDate.getDate();
+
+    currentDay -= deltaDays;
+
+    if (currentDay < 1) {
+        if (currentMonth === 0) { // 月份退位
+            currentYear -= 1;
+            currentMonth = 11;
+        }else{ 
+            currentMonth -= 1;
+        }
+
+        // 抓上個月總天數，再針對變成負值的日期更新
+        let lastDayOfLastMonth = new Date(currentYear, currentMonth, 0).getDate();
+        currentDay += lastDayOfLastMonth;
+    }
+
+    // 更新成新的日期
+    newDate.setFullYear(currentYear);
+    newDate.setMonth(currentMonth);
+    newDate.setDate(currentDay);
+
+    return newDate;
+}
+
+
 function generateSevenDays(){
     let dateArr = []
     let data = [{
@@ -216,10 +252,8 @@ function generateSevenDays(){
         backgroundColor: "rgba(0, 0, 0, 0)",
     }]
 
-    let today = new Date();
-    let dateDelta = new Date(today)
     for (let i=7; i>0; i--){
-        dateDelta.setDate(today.getDate() - i)
+        let dateDelta = subtractOneHour(i)
         let dd = String(dateDelta.getDate()).padStart(2, '0')
         let mm = String(dateDelta.getMonth() + 1).padStart(2, '0')
         let yyyy = String(dateDelta.getFullYear())
@@ -255,7 +289,7 @@ async function createChart(){
     }
     
     chartMain.data = dataSet
-    await chartMain.update();
+    chartMain.update()
 }
 
 
@@ -380,4 +414,30 @@ function newChart(){
 }
 
 
+function updateChartHeight(){
+    let chartFrame = document.querySelector(".queryResultsChart")
+    let originSize = chartMain.options.aspectRatio
+
+    if (chartFrame.offsetWidth < 500){
+        chartMain.options.aspectRatio = 0.8
+    }else if (chartFrame.offsetWidth < 700){
+        chartMain.options.aspectRatio = 1.2
+    }else if (chartFrame.offsetWidth < 900){
+        chartMain.options.aspectRatio = 1.5
+    }else if (chartFrame.offsetWidth < 1200){
+        chartMain.options.aspectRatio = 1.8
+    }else{
+        chartMain.options.aspectRatio = 2
+    }
+    if (originSize === chartMain.options.aspectRatio){
+        return
+    }
+    chartMain.update(false)
+}
+
+
+window.addEventListener('resize', updateChartHeight)
+
+
 newChart()
+updateChartHeight()
