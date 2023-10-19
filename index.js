@@ -6,6 +6,7 @@ let siteResultGlobal; //site data global variable, 這個變數是各縣市觀�
 createRightUp("請點選地圖");
 createRightDown();
 
+
 asyncMain(); 
 
 //主要處理網頁生成動態處理的需要的資料
