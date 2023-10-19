@@ -127,19 +127,19 @@ function updateAQIStatus(dataToShow) {
           color = "green";
       } else if (dataToShow.aqi <= 100) {
           status = "中等";
-          color = "FFD500";
+          color = "#FFD500";
       } else if (dataToShow.aqi <= 150) {
           status = "對敏感群體不健康";
-          color = "FF8000";
+          color = "#FF8000";
       } else if (dataToShow.aqi <= 200) {
           status = "不健康";
-          color = "FF0000";
+          color = "#FF0000";
       } else if (dataToShow.aqi <= 300) {
           status = "非常不健康";
-          color = "4F009A";
+          color = "#4F009A";
       } else {
           status = "有害";
-          color = "4F0000";
+          color = "#4F0000";
       }
   }
   
