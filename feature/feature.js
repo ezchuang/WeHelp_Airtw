@@ -67,13 +67,24 @@ fetch(url)
         let rowIndex = Regions.indexOf(Region);
         let dateIndex = DateMatchs.indexOf(DateMatch) + 1;
         let aqiElement = document.querySelector(`tr:nth-child(${rowIndex + 2}) td[headers="rdate${rowIndex} date${dateIndex} aqi${dateIndex}"] span`);
-        let majorpollutantElement = document.querySelector(`tr:nth-child(${rowIndex + 2}) td[headers="rdate${rowIndex} date${dateIndex} index${dateIndex}"]`);
-
-        
-
+        let majorpollutantElement = document.querySelector(`tr:nth-child(${rowIndex + 2}) td[headers="rdate${rowIndex} date${dateIndex} index${dateIndex}"]`);       
         if (MatchingRecord) {
           if (aqiElement) {
             aqiElement.textContent = MatchingRecord.aqi || "NA";
+            let aqiValue = parseInt(MatchingRecord.aqi);
+            if (!isNaN(aqiValue)) {
+              if (aqiValue <= 50) {
+                aqiElement.classList.add("background-green");
+              } else if (aqiValue <= 100) {
+                aqiElement.classList.add("background-yellow");
+              } else if (aqiValue <= 150) {
+                aqiElement.classList.add("background-orange");
+              } else if (aqiValue <= 200) {
+                aqiElement.classList.add("background-red");
+              } else {
+                aqiElement.classList.add("background-purple");
+              }
+            }
           }
           if (majorpollutantElement) {
             majorpollutantElement.textContent = MatchingRecord.majorpollutant || "NA";
