@@ -117,7 +117,6 @@ function getDataByRects(dataGeneral){
 }
 
 
-
 function updateAQIStatus(dataToShow) {
   let status;
   let color;
