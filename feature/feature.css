@@ -41,6 +41,10 @@ tr:hover {
     background-color: #e6e6e6;
 }
 
+.background-purple {
+    color:purple;
+}
+
 .background-red {
     color:  #ff5c5c;
 }
@@ -86,4 +90,45 @@ tr:hover {
     max-width: 800px;
     font-weight: 330;
     font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+    .featureAqiTitle_div, .featureAqiUpdateTime_div, .featureAqiUpdateTime_div, .featureDesciptionTitle_div, .featureDesciprionContent_div {
+        width: calc(100% - 40px);
+    }
+    .featureDesciprionContent_p {
+        padding: 0px 20px; 
+    }
+}
+
+@media (max-width: 700px) {
+    .featureAqiTitle_span {
+        font-size: 16px;
+    }
+    .featureDesciprionContent_p {
+        padding: 0px 20px; 
+    }
+    table, th, td, tr {
+        font-size: 14px;
+    }
+    .table-con {
+        padding: 0px 20px;
+    }
+    
+    
+}
+
+@media (max-width: 400px) {
+
+    .featureAqiTitle_span {
+        font-size: 14px;
+    }
+    table, th, td, tr {
+        font-size: 10px;
+    }
+    .table-con {
+        padding: 0px 20px;
+    }
+    
+    
 }
