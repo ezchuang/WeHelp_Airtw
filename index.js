@@ -111,6 +111,7 @@ function getDataByRects(dataGeneral){
       let rectClickName = this.getAttribute("data-name"); 
       let dataToShow = dataGeneral.records.find(record => record.sitename === rectClickName);
           createRightDown(dataToShow);
+          changeImage(rectClickName);
       });
   });
 }
