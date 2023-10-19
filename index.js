@@ -764,6 +764,6 @@ async function classifySite(){
 function addImgErrorEventListeners(){
   let img = document.querySelector(".realtimePicTitle_img")
   img.onerror = function() {
-      img.src = "./static/picture/pic_error.png";
+      img.src = "./static/picture/pic_error.jpg";
   };
 }
