@@ -7,32 +7,54 @@
   <link rel="stylesheet" href="../base.css">
   <link rel="stylesheet" href="./feature.css">
   <script src="feature.js"></script>
-  <title>台灣空氣污染即時資訊</title>
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet" />
+  <title>Air Quality台灣空氣污染即時資訊</title>
 </head>
 <header class="header">
   <div class="div_header flex container">
     <div class="header_div">
-      <li class="header_div_li"><a class="header_div_li_a" href="../">Air Quality</a></li>
+      <li class="header_div_li"><a class="header_div_li_a" href="../">Air <span
+            class="header_div_li_a_b">Quality</span></a></li>
     </div>
     <div class="header_div_other">
-      <li class="header_div_other_li"><a class="header_div_other_li_a" href="../feature/index.html">未來預報</a></li>
-      <li class="header_div_other_li"><a class="header_div_other_li_a" href="../previous/index.html">歷史監測資料</a></li>
+      <li class="header_div_other_li"><a class="header_div_other_li_a b-16" href="../feature/index.html">未來預報</a></li>
+      <li class="header_div_other_li"><a class="header_div_other_li_a b-16" href="../previous/index.html">歷史監測資料</a>
+      </li>
     </div>
   </div>
 </header>
 
 <body>
   <div class="wrapper">
+    <div id="loadingScreen">
+      <div class="loadingio-spinner-spinner-o5dixidgmqa">
+        <div class="ldio-qil3bdsdgd">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
     <div class="content">
       <!-- 全國各空品區空氣品質指標(AQI)標題 -->
       <div class="featureAqiTitle_div">
-        <span class="featureAqiTitle_span">全國各空品區各空氣品質指標（AQI）預報</span>
+        <span class="featureAqiTitle_span ti-b-25 ">全國各空品區各空氣品質指標（AQI）預報</span>
       </div>
 
 
       <!-- 資料發布時間：2023/10/16 -->
       <div class="featureAqiUpdateTime_div">
-        <span>資料發布時間：</span>
+        <span class="m-16-k">資料發布時間：</span>
         <span class="faetureAqiUpdateTime_span" id="faetureAqiUpdateTime_span"></span>
       </div>
 
@@ -43,7 +65,7 @@
           <table>
             <thead>
               <tr>
-                <th id="date">日期</th>
+                <th id="date" class="m-16-k">日期</th>
                 <th colspan="2" id="date1"></th>
                 <th colspan="2" id="date2"></th>
                 <th colspan="2" id="date3"></th>
@@ -52,13 +74,13 @@
             </thead>
             <tbody>
               <tr>
-                <th id="rdate" headers="date">空品區</th>
-                <th id="aqi1" headers="date1">AQI 指標</th>
-                <th id="index1" headers="date1">指標污染物</th>
-                <th id="aqi2" headers="date2">AQI 指標</th>
-                <th id="index2" headers="date2">指標污染物</th>
-                <th id="aqi3" headers="date3">AQI 指標</th>
-                <th id="index3" headers="date3">指標污染物</th>
+                <th id="rdate" headers="date" class="m-16-k">空品區</th>
+                <th id="aqi1" headers="date1" class="m-16-k">AQI 指標</th>
+                <th id="index1" headers="date1" class="m-16-k">指標污染物</th>
+                <th id="aqi2" headers="date2" class="m-16-k">AQI 指標</th>
+                <th id="index2" headers="date2" class="m-16-k">指標污染物</th>
+                <th id="aqi3" headers="date3" class="m-16-k">AQI 指標</th>
+                <th id="index3" headers="date3" class="m-16-k">指標污染物</th>
                 <!-- <th id="aqi4" headers="date4">AQI 指標</th>
                 <th id="index4" headers="date4">指標污染物</th> -->
               </tr>
@@ -78,18 +100,18 @@
               td id radte9 = 金門
               td id radte10 = 澎湖 -->
               <tr>
-                <th id="rdate0" headers="date">北部</th>
+                <th id="rdate0" headers="date" class="m-16-k">北部</th>
                 <td headers="rdate0 date1 aqi1">
-                  <span></span>
-                <td headers="rdate0 date1 index1"><br></td>
+                  <span class="m-16-k"></span>
+                <td headers="rdate0 date1 index1" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate0 date2 aqi2">
                   <span></span>
-                <td headers="rdate0 date2 index2"><br></td>
+                <td headers="rdate0 date2 index2" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate0 date3 aqi3">
                   <span></span>
-                <td headers="rdate0 date3 index3"><br></td>
+                <td headers="rdate0 date3 index3" class="m-16-k"><br></td>
                 </td>
                 <!-- <td headers="rdate0 date4 aqi4">
                   <span></span>
@@ -97,18 +119,18 @@
                 </td> -->
               </tr>
               <tr>
-                <th id="rdate1" headers="date">竹苗</th>
+                <th id="rdate1" headers="date" class="m-16-k">竹苗</th>
                 <td headers="rdate1 date1 aqi1">
                   <span></span>
-                <td headers="rdate1 date1 index1"><br></td>
+                <td headers="rdate1 date1 index1" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate1 date2 aqi2">
                   <span></span>
-                <td headers="rdate1 date2 index2"><br></td>
+                <td headers="rdate1 date2 index2" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate1 date3 aqi3">
                   <span></span>
-                <td headers="rdate1 date3 index3"><br></td>
+                <td headers="rdate1 date3 index3" class="m-16-k"><br></td>
                 </td>
                 <!-- <td headers="rdate1 date4 aqi4">
                   <span></span>
@@ -116,18 +138,18 @@
                 </td> -->
               </tr>
               <tr>
-                <th id="rdate2" headers="date">中部</th>
+                <th id="rdate2" headers="date" class="m-16-k">中部</th>
                 <td headers="rdate2 date1 aqi1">
                   <span></span>
                 </td>
-                <td headers="rdate2 date1 index1"><br></td>
+                <td headers="rdate2 date1 index1" class="m-16-k"><br></td>
                 <td headers="rdate2 date2 aqi2">
                   <span></span>
-                <td headers="rdate2 date2 index2"><br></td>
+                <td headers="rdate2 date2 index2" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate2 date3 aqi3">
                   <span></span>
-                <td headers="rdate2 date3 index3"><br></td>
+                <td headers="rdate2 date3 index3" class="m-16-k"><br></td>
                 </td>
                 <!-- <td headers="rdate2 date4 aqi4">
                   <span></span>
@@ -135,18 +157,18 @@
                 </td> -->
               </tr>
               <tr>
-                <th id="rdate3" headers="date">雲嘉南</th>
+                <th id="rdate3" headers="date" class="m-16-k">雲嘉南</th>
                 <td headers="rdate3 date1 aqi1">
                   <span></span>
-                <td headers="rdate3 date1 index1"><br></td>
+                <td headers="rdate3 date1 index1" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate3 date2 aqi2">
                   <span></span>
-                <td headers="rdate3 date2 index2"><br></td>
+                <td headers="rdate3 date2 index2" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate3 date3 aqi3">
                   <span></span>
-                <td headers="rdate3 date3 index3"><br></td>
+                <td headers="rdate3 date3 index3" class="m-16-k"><br></td>
                 </td>
                 <!-- <td headers="rdate3 date4 aqi4">
                   <span></span>
@@ -154,18 +176,18 @@
                 </td> -->
               </tr>
               <tr>
-                <th id="rdate4" headers="date">高屏</th>
+                <th id="rdate4" headers="date" class="m-16-k">高屏</th>
                 <td headers="rdate4 date1 aqi1">
                   <span></span>
-                <td headers="rdate4 date1 index1"><br></td>
+                <td headers="rdate4 date1 index1" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate4 date2 aqi2">
                   <span></span>
-                <td headers="rdate4 date2 index2"><br></td>
+                <td headers="rdate4 date2 index2" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate4 date3 aqi3">
                   <span></span>
-                <td headers="rdate4 date3 index3"><br></td>
+                <td headers="rdate4 date3 index3" class="m-16-k"><br></td>
                 </td>
                 <!-- <td headers="rdate4 date4 aqi4">
                   <span></span>
@@ -173,18 +195,18 @@
                 </td> -->
               </tr>
               <tr>
-                <th id="rdate5" headers="date">宜蘭</th>
+                <th id="rdate5" headers="date" class="m-16-k">宜蘭</th>
                 <td headers="rdate5 date1 aqi1">
                   <span></span>
-                <td headers="rdate5 date1 index1"><br></td>
+                <td headers="rdate5 date1 index1" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate5 date2 aqi2">
                   <span></span>
-                <td headers="rdate5 date2 index2"><br></td>
+                <td headers="rdate5 date2 index2" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate5 date3 aqi3">
                   <span></span>
-                <td headers="rdate5 date3 index3"><br></td>
+                <td headers="rdate5 date3 index3" class="m-16-k"><br></td>
                 </td>
                 <!-- <td headers="rdate5 date4 aqi4">
                   <span></span>
@@ -192,18 +214,18 @@
                 </td> -->
               </tr>
               <tr>
-                <th id="rdate6" headers="date">花東</th>
+                <th id="rdate6" headers="date" class="m-16-k">花東</th>
                 <td headers="rdate6 date1 aqi1">
                   <span></span>
-                <td headers="rdate6 date1 index1"><br></td>
+                <td headers="rdate6 date1 index1" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate6 date2 aqi2">
                   <span></span>
-                <td headers="rdate6 date2 index2"><br></td>
+                <td headers="rdate6 date2 index2" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate6 date3 aqi3">
                   <span></span>
-                <td headers="rdate6 date3 index3"><br></td>
+                <td headers="rdate6 date3 index3" class="m-16-k"><br></td>
                 </td>
                 <!-- <td headers="rdate6 date4 aqi4">
                   <span></span>
@@ -211,18 +233,18 @@
                 </td> -->
               </tr>
               <tr>
-                <th id="rdate7" headers="date">馬祖</th>
+                <th id="rdate7" headers="date" class="m-16-k">馬祖</th>
                 <td headers="rdate7 date1 aqi1">
                   <span></span>
-                <td headers="rdate7 date1 index1"><br></td>
+                <td headers="rdate7 date1 index1" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate7 date2 aqi2">
                   <span></span>
-                <td headers="rdate7 date2 index2"><br></td>
+                <td headers="rdate7 date2 index2" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate7 date3 aqi3">
                   <span></span>
-                <td headers="rdate7 date3 index3"><br></td>
+                <td headers="rdate7 date3 index3" class="m-16-k"><br></td>
 
                 </td>
                 <!-- <td headers="rdate7 date4 aqi4">
@@ -231,18 +253,18 @@
                 </td> -->
               </tr>
               <tr>
-                <th id="rdate8" headers="date">金門</th>
+                <th id="rdate8" headers="date" class="m-16-k">金門</th>
                 <td headers="rdate8 date1 aqi1">
                   <span></span>
-                <td headers="rdate8 date1 index1"><br></td>
+                <td headers="rdate8 date1 index1" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate8 date2 aqi2">
                   <span></span>
-                <td headers="rdate8 date2 index2"><br></td>
+                <td headers="rdate8 date2 index2" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate8 date3 aqi3">
                   <span></span>
-                <td headers="rdate8 date3 index3"><br></td>
+                <td headers="rdate8 date3 index3" class="m-16-k"><br></td>
                 </td>
                 <!-- <td headers="rdate8 date4 aqi4">
                   <span></span>
@@ -250,18 +272,18 @@
                 </td> -->
               </tr>
               <tr>
-                <th id="rdate9" headers="date">澎湖</th>
+                <th id="rdate9" headers="date" class="m-16-k">澎湖</th>
                 <td headers="rdate9 date1 aqi1">
                   <span></span>
-                <td headers="rdate9 date1 index1"><br></td>
+                <td headers="rdate9 date1 index1" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate9 date2 aqi2">
                   <span></span>
-                <td headers="rdate9 date2 index2"><br></td>
+                <td headers="rdate9 date2 index2" class="m-16-k"><br></td>
                 </td>
                 <td headers="rdate9 date3 aqi3">
                   <span></span>
-                <td headers="rdate9 date3 index3"><br></td>
+                <td headers="rdate9 date3 index3" class="m-16-k"><br></td>
                 </td>
                 <!-- <td headers="rdate9 date4 aqi4">
                   <span></span>
@@ -276,10 +298,10 @@
 
       <!-- 預報說明 -->
       <div class="featureDesciptionTitle_div">
-        <span class="featureDesciptionTitle_span">預報說明</span>
+        <span class="featureDesciptionTitle_span ti-b-25">預報說明</span>
       </div>
-      <div class="featureDesciprionContent_div">
-        <p class="featureDesciprionContent_p">
+      <div class="featureDesciprionContent_div m-16-k">
+        <p class="featureDesciprionContent_p m-16-k">
         </p>
       </div>
     </div>
@@ -287,7 +309,7 @@
   <footer class="footer flex">
     <div class="footer flex">
       <div class="footer_div">
-        <p class="footer_div_p">COPYRIGHT @ 2023 台灣空氣污染即時資訊</p>
+        <p class="footer_div_p">COPYRIGHT @ 2023 Air Quality</p>
       </div>
     </div>
   </footer>
