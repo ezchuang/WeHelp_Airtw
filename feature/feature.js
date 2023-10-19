@@ -1,3 +1,4 @@
+
 const url = 'https://data.moenv.gov.tw/api/v2/aqf_p_01?api_key=4bb6f609-cba3-44fa-949a-45a9d609839c';
 
 fetch(url)
@@ -102,7 +103,10 @@ fetch(url)
     let ForcastWord = document.querySelector('.featureDesciprionContent_p');
     let ForcastContent = records[0].content;
     ForcastWord.innerHTML = ForcastContent;
+    document.getElementById("loadingScreen").style.display = "none";//網頁最後都會跑這個function，所以可以把loadind畫面加這
+
   })
+  
   .catch(error => {
     console.log('There was a problem with the fetch operation:', error.message);
   });

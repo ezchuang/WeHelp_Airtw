@@ -48,6 +48,7 @@
     height: 46px;
     background-color:  rgba(0, 133, 255, 1);
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .queryForm_cotainer_div { 
@@ -85,6 +86,7 @@
     background-color: white;
     border-radius: 20px;
     transition: color 0.3s, background-color 0.3s;
+    cursor: pointer;
 }
 /* 當input被選中時，改變其後面的label的顏色 */
 .queryForm_cotainer_monitorItem_checkbox_div>input:checked + .queryForm_cotainer_monitorItem_checkbox_label {
@@ -105,7 +107,7 @@
     border-radius: 5px;
     padding: 0 0 0 10px;
     font-size: 16px;
-    
+    cursor: pointer;
 }
 
 

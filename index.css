@@ -1,84 +1,43 @@
-.ti-b-25{
-    font-size: 20px;
-    font-weight: 700;
-    color: #000;
-}
-.r-16{
-    font-size: 16px;
-    font-weight: 400;
-    color: #666666;
-}
-.r-14{
-    font-size: 14px;
-    font-weight: 400;
-    color: #666666;
-    padding: 3px;
-}
-.b-20{
-    font-size: 20px;
-    font-weight: 700;
-    color: #06539A;
-}
-.b-25{
-    font-size: 25px;
-    font-weight: 700;
-    color: #06539A;
-}
-.b-50{
-    font-size: 50px;
-    line-height: 45px;
-    font-weight: 700;
-    color: #000;
-}
-.tr-b-25{
-    font-size: 25px;
-    line-height: 25px;
-    font-weight: 700;
-    color: #2377C5;
-}
-.tr-b-16{
-    font-size: 16px;
-    font-weight: 700;
-    color: #666666;
-}
-
 .content {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
 }
-.td-b-20{
-    font-size: 20px;
-    font-weight: 700;
-    color: #06539A;
-}
-.td-r-16{
-    font-size: 16px;
-    font-weight: 400;
-    color: #666666;
-    text-align: left;
-   
+
+.sidebar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 500px;
 }
 
-
-.realtimeAirMonitor_div, .realtimePic_div, .airQulityIndex_div{
+.realtimeAirMonitor_div,
+.realtimePic_div,
+.airQulityIndex_div {
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 20px;
 
 }
+
 .realtimeAirMonitor_div {
     background-color: rgba(222, 241, 255, 1);
 }
+
 .realtimePic_div {
     background-color: rgba(240, 249, 255, 1);
 }
+
 .airQulityIndex_div {
     background-color: rgba(222, 241, 255, 1);
 }
-.realtimeAirMonitor_div_div, .realtimePic_div_div, .airQulityIndex_div_div{
+
+.realtimeAirMonitor_div_div,
+.realtimePic_div_div,
+.airQulityIndex_div_div {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -86,11 +45,14 @@
     align-items: flex-start;
 }
 
-.realtimeAirMonitorTitle_div, .realtimePicTitle_div, .airQulityIndexTitle_div {
+
+.realtimeAirMonitorTitle_div,
+.realtimePicTitle_div,
+.airQulityIndexTitle_div {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap:10px;
+    gap: 10px;
 }
 
 .realtimeAirMonitor_div_content {
@@ -100,53 +62,54 @@
     width: 1200px;
 }
 
-.realtimeAirMonitor_content_left_div{
+.realtimeAirMonitor_content_left_div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.realtimeAirMonitor_content_right_div {
     display: flex;
     flex-direction: column;
     gap: 5px;
 
 }
-.realtimeAirMonitor_content_right_div{
+
+.realtimeAirMonitor_content_rightup_div {
     display: flex;
     flex-direction: column;
     gap: 5px;
-
-}
-
-.realtimeAirMonitor_content_rightup_div{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: 100%;
+    width: 500px;
     padding: 10px;
     align-items: center;
     background: #ffff;
     border-radius: 10px;
-    box-shadow: 0 0 8px #0000001a
+    box-shadow: 0 0 8px #0000001a;
 }
 
 .realtimeAirMonitor_content_rightdown_div {
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: 450px;
+    width: 500px;
     padding: 10px;
     background: #ffff;
     border-radius: 10px;
-    box-shadow: 0 0 8px #0000001a
+    box-shadow: 0 0 8px #0000001a;
 }
 
 
 
-.realtimeAirMonitor_content_rightdown_new_aqi_div{
+.realtimeAirMonitor_content_rightdown_new_aqi_div {
     display: flex;
     align-items: center;
     margin-top: 10px;
     justify-content: center;
 }
-.realtimeAirMonitor_content_rightdown_new_aqi_circle_div{
-    width: 150px;
-    height: 150px;
+
+.realtimeAirMonitor_content_rightdown_new_aqi_circle_div {
+    width: 180px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -154,28 +117,38 @@
     justify-content: center;
     border-radius: 100px;
     border: 12px solid orange;
-    padding-top: 10px;
     margin-left: 25px;
+}
+
+.realtimeAirMonitor_content_right_select_left_select {
+    margin-left: 20px;
+    background: rgba(222, 241, 255, 1);
+    border-radius: 5px;
+    padding: 2px;
+    cursor: pointer;
+}
+.airQulityIndexTitle_img_div img{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /* map */
 .svg {
-  width: 600px;
-  height: 700px;
-  background: rgba(222, 241, 255, 1);
+    width: 600px;
+    height: 700px;
+    background: rgba(222, 241, 255, 1);
 }
 
-.svg path {
-  stroke: white;
-  cursor: pointer;
-  transition: 0.5s;
-  fill: #6fcd98;
+.group path:hover {
+    fill: #73ab8b;
+    cursor: pointer;
+
 }
 
- .svg path:hover {
-  fill: #0a7438;
-  transform: translate(-5px,-5px);
-} 
+.acc0f7b6-5600-4fb3-9d03-75378428b59f:hover {
+    cursor: pointer;
+}
+
 
 /* table */
 table {
@@ -183,24 +156,128 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
 }
-th{
-  padding: 8px;  
+
+th {
+    padding: 8px;
 }
-td{
+
+td {
     align-items: center;
     justify-content: center;
     text-align: center;
     vertical-align: middle;
 }
-sub{
+
+sub {
     font-size: 20px;
 }
-.realtimeAirMonitor_content_rightdown_table_o3_div,.realtimeAirMonitor_content_rightdown_table_pm10_div,.realtimeAirMonitor_content_rightdown_table_so2_div{
+
+.realtimeAirMonitor_content_rightdown_table_o3_div,
+.realtimeAirMonitor_content_rightdown_table_pm10_div,
+.realtimeAirMonitor_content_rightdown_table_so2_div {
     background: #DEF1FF;
 }
-.realtimeAirMonitor_content_rightdown_table_pm25_div,.realtimeAirMonitor_content_rightdown_table_co_div,.realtimeAirMonitor_content_rightdown_table_no2_div{
+
+.realtimeAirMonitor_content_rightdown_table_pm25_div,
+.realtimeAirMonitor_content_rightdown_table_co_div,
+.realtimeAirMonitor_content_rightdown_table_no2_div {
     background: #F0F9FF;
 }
-.realtimeAirMonitor_content_rightdown_table_line_div{
-    border-bottom: 2px solid #C1DAFF;;
+
+.realtimeAirMonitor_content_rightdown_table_line_div {
+    border-bottom: 2px solid #C1DAFF;
+}
+
+@media (max-width: 1500px) {
+    .sidebar {
+        height: 250px;
+        right: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .wrap {
+        max-width: 100%;
+    }
+
+    .realtimeAirMonitor_div_div,
+    .realtimePic_div_div,
+    .airQulityIndex_div_div,
+    .realtimeAirMonitor_div_content {
+        max-width: 100%;
+    }
+
+    .realtimePicTitle_img_div img {
+        width: 80%;
+    }
+
+    .realtimePicTitle_img_div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .realtimeAirMonitor_div_content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .realtimeAirMonitor_content_f_div {
+        max-width: 100%;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .realtimeAirMonitor_div_content_left {
+        padding-bottom: 10px;
+    }
+    .airQulityIndexTitle_img_div{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        
+    }
+    .airQulityIndexTitle_img_div img{
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .realtimeAirMonitor_content_rightdown_div,
+    .realtimeAirMonitor_content_rightup_div {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .realtimeAirMonitor_content_rightdown_table_div {
+        width: 100%;
+    }
+
+    .realtimeAirMonitor_content_right_div {
+        width: 100%;
+        align-items: center;
+    }
+
+    .svg {
+        max-width: 100%;
+        height: 500px;
+    }
+
+    .realtimeAirMonitor_div_content_left {
+        padding-bottom: 10px;
+    }
+
+    .realtimeAirMonitor_content_rightdown_new_aqi_div {
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .realtimeAirMonitor_content_rightdown_new_aqi_circle_div {
+        margin-left: 5px;
+    }
+
 }
