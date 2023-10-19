@@ -314,7 +314,7 @@ function createRightUp(tagname){
   
       let pm25Td2 = document.createElement("td");
       pm25Td2.classList.add("realtimeAirMonitor_content_rightdown_table_line_div", "td-b-20");
-      pm25Td2.textContent = "64";
+    //   pm25Td2.textContent = "64";
       if (dataToShow){pm25Td2.textContent = dataToShow['pm2.5_avg']};
   
       let pm25Sup = document.createElement("sup");
@@ -339,7 +339,7 @@ function createRightUp(tagname){
   
       let pm25Td5 = document.createElement("td");
       pm25Td5.classList.add("td-b-20");
-      pm25Td5.textContent = "72";
+    //   pm25Td5.textContent = "72";
       if (dataToShow){pm25Td5.textContent = dataToShow['pm2.5']};
   
       let pm25Sup2 = document.createElement("sup");
