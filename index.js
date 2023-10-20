@@ -216,7 +216,7 @@ function createRightDown(dataToShow){
   let resultTimeSpan2 = document.createElement("span");
   resultTimeSpan2.classList.add("r-16");
   if (dataToShow){
-    if (dataToShow.publishtime == "" || dataToShow.publishtime == undefined){
+    if (dataToShow.publishtime === "" || dataToShow.publishtime == undefined){
       resultTimeSpan2.textContent = "NA";
     }else{
       resultTimeSpan2.textContent = dataToShow.publishtime;
@@ -264,7 +264,7 @@ function createRightDown(dataToShow){
   let aqiCircleSpan2 = document.createElement("span");
   aqiCircleSpan2.classList.add("b-50");
   if (dataToShow){
-    if (dataToShow.aqi == "" || dataToShow.aqi == undefined){
+    if (dataToShow.aqi === "" || dataToShow.aqi == undefined){
       aqiCircleSpan2.textContent = "NA";
     }else{
       aqiCircleSpan2.textContent = dataToShow.aqi;
@@ -326,7 +326,7 @@ function createRightDown(dataToShow){
   let o3Td2 = document.createElement("td");
   o3Td2.classList.add("realtimeAirMonitor_content_rightdown_table_line_div", "td-b-20");
   if (dataToShow){
-    if (dataToShow.o3_8hr == "" || dataToShow.o3_8hr == undefined){
+    if (dataToShow.o3_8hr === "" || dataToShow.o3_8hr == undefined){
       o3Td2.textContent = "NA";
     }else{
       o3Td2.textContent = dataToShow.o3_8hr;
@@ -352,7 +352,7 @@ function createRightDown(dataToShow){
   let o3Td5 = document.createElement("td");
   o3Td5.classList.add("td-b-20");
   if (dataToShow){
-    if (dataToShow.o3 == "" || dataToShow.o3 == undefined){
+    if (dataToShow.o3 === "" || dataToShow.o3 == undefined){
       o3Td5.textContent = "NA";
     }else{
       o3Td5.textContent = dataToShow.o3;
@@ -406,7 +406,7 @@ function createRightDown(dataToShow){
   pm25Td2.classList.add("realtimeAirMonitor_content_rightdown_table_line_div", "td-b-20");
 //   pm25Td2.textContent = "64";
   if (dataToShow){
-    if (dataToShow['pm2.5_avg'] == "" || dataToShow['pm2.5_avg'] == undefined){
+    if (dataToShow['pm2.5_avg'] === "" || dataToShow['pm2.5_avg'] == undefined){
       pm25Td2.textContent = "NA";
     }else{
       pm25Td2.textContent = dataToShow['pm2.5_avg'];
@@ -437,7 +437,7 @@ function createRightDown(dataToShow){
   pm25Td5.classList.add("td-b-20");
 //   pm25Td5.textContent = "72";
   if (dataToShow){
-    if (dataToShow['pm2.5'] == "" || dataToShow['pm2.5'] == undefined){
+    if (dataToShow['pm2.5'] === "" || dataToShow['pm2.5'] == undefined){
       pm25Td5.textContent = "NA";
     }else{
       pm25Td5.textContent = dataToShow['pm2.5'];
@@ -492,7 +492,7 @@ function createRightDown(dataToShow){
   let pm10Td2 = document.createElement("td");
   pm10Td2.classList.add("realtimeAirMonitor_content_rightdown_table_line_div", "td-b-20");
   if (dataToShow){
-    if (dataToShow.pm10_avg == "" || dataToShow.pm10_avg == undefined){
+    if (dataToShow.pm10_avg === "" || dataToShow.pm10_avg == undefined){
       pm10Td2.textContent = "NA";
     }else{
       pm10Td2.textContent = dataToShow.pm10_avg;
@@ -521,7 +521,7 @@ function createRightDown(dataToShow){
   let pm10Td5 = document.createElement("td");
   pm10Td5.classList.add("td-b-20");
   if (dataToShow){
-    if (dataToShow.pm10 == "" || dataToShow.pm10 == undefined){
+    if (dataToShow.pm10 === "" || dataToShow.pm10 == undefined){
       pm10Td5.textContent = "NA";
     }else{
       pm10Td5.textContent = dataToShow.pm10;
@@ -574,7 +574,7 @@ function createRightDown(dataToShow){
   coTd2.classList.add("realtimeAirMonitor_content_rightdown_table_line_div", "td-b-20");
   // coTd2.textContent = "64";
   if (dataToShow){
-    if (dataToShow.co_8hr == "" || dataToShow.co_8hr == undefined){
+    if (dataToShow.co_8hr === "" || dataToShow.co_8hr == undefined){
       coTd2.textContent = "NA";
     }else{
       coTd2.textContent = dataToShow.co_8hr;
@@ -600,7 +600,7 @@ function createRightDown(dataToShow){
   coTd5.classList.add("td-b-20");
 //   coTd5.textContent = "72";
   if (dataToShow){
-    if (dataToShow.co == "" || dataToShow.co == undefined){
+    if (dataToShow.co === "" || dataToShow.co == undefined){
       coTd5.textContent = "NA";
     }else{
       coTd5.textContent = dataToShow.co;
@@ -652,7 +652,7 @@ function createRightDown(dataToShow){
   so2Td2.classList.add("td-b-20");
 //   so2Td2.textContent = "64";
   if (dataToShow){
-    if (dataToShow.so2 == "" || dataToShow.so2 == undefined){
+    if (dataToShow.so2 === "" || dataToShow.so2 == undefined){
       so2Td2.textContent = "NA";
     }else{
       so2Td2.textContent = dataToShow.so2;
@@ -703,7 +703,7 @@ function createRightDown(dataToShow){
   let no2Td2 = document.createElement("td");
   no2Td2.classList.add("td-b-20");
   if (dataToShow){
-    if (dataToShow.no2 == "" || dataToShow.no2 == undefined){
+    if (dataToShow.no2 === "" || dataToShow.no2 == undefined){
       no2Td2.textContent = "NA";
     }else{
       no2Td2.textContent = dataToShow.no2;
