@@ -71,22 +71,6 @@ async function fetchAqiData() {
     // return requestData
 }
 
-///old
-// function getDataBySitename(dataGeneral) {
-//     let selectElement = document.querySelector('.realtimeAirMonitor_content_right_select_left_select')
-//     selectElement.addEventListener('change', function chooseSite(sitename) {
-//         // selectElement.removeEventListener('change', chooseSite)
-//         let selectedSitename = sitename.target.value; // get sitename's value
-//         // console.log(selectedSitename)
-//         // get data from json according to sitename
-//         let dataToShow = dataGeneral.records.find(record => record.sitename === selectedSitename);
-//         console.log(dataToShow);
-//         // updateTable(dataToShow);
-//         createRightDown(dataToShow);
-//         updateAQIStatus(dataToShow);
-//     });
-// }
-
 //原本城市更動 &&&&&&
 function getDataBySitename(dataGeneral) {
     
@@ -96,6 +80,7 @@ function getDataBySitename(dataGeneral) {
       let selectedSitename = sitename.target.value; // get sitename's value
       changeImage(selectedSitename);
       let dataToShow = dataGeneral.records.find(record => record.sitename === selectedSitename);
+      console.log(dataToShow)
       createRightDown(dataToShow);
       updateAQIStatus(dataToShow);
   });
@@ -230,7 +215,13 @@ function createRightDown(dataToShow){
 
   let resultTimeSpan2 = document.createElement("span");
   resultTimeSpan2.classList.add("r-16");
-  if (dataToShow){resultTimeSpan2.textContent = dataToShow.publishtime;}
+  if (dataToShow){
+    if (dataToShow.publishtime === "" || dataToShow.publishtime == undefined){
+      resultTimeSpan2.textContent = "NA";
+    }else{
+      resultTimeSpan2.textContent = dataToShow.publishtime;
+    }
+  };
 
   resultTimeSpan1.appendChild(resultTimeSpan2);
   resultTimeDiv.appendChild(resultTimeSpan1);
@@ -247,13 +238,12 @@ function createRightDown(dataToShow){
   }else{
     aqiCitySpan.textContent = "臺北市/中山";
   }
-//========================================================================================================================
+
 
   let aqiCircleDiv = document.createElement("div");
   let aqiStatus = updateAQIStatus(dataToShow);
   aqiCircleDiv.classList.add("realtimeAirMonitor_content_rightdown_new_aqi_circle_div");
   aqiCircleDiv.style.border = `12px solid ${aqiStatus.color}`;
-//========================================================================================================================
 
   let aqiCircleTextDiv = document.createElement("div");
   aqiCircleTextDiv.classList.add("realtimeAirMonitor_content_rightdown_new_aqi_circle_text_div");
@@ -271,21 +261,23 @@ function createRightDown(dataToShow){
   aqiCircleSpan1.appendChild(br2);
   aqiCircleTextDiv.appendChild(aqiCircleSpan1);
  
-
   let aqiCircleSpan2 = document.createElement("span");
   aqiCircleSpan2.classList.add("b-50");
-  if (dataToShow){aqiCircleSpan2.textContent = dataToShow.aqi};
+  if (dataToShow){
+    if (dataToShow.aqi === "" || dataToShow.aqi == undefined){
+      aqiCircleSpan2.textContent = "NA";
+    }else{
+      aqiCircleSpan2.textContent = dataToShow.aqi;
+    }
+  }
   let br3 = document.createElement("br");
   aqiCircleSpan2.appendChild(br3);
-//========================================================================================================================
 
   let aqiCircleSpan3 = document.createElement("span");
 //   let aqiStatus = updateAQIStatus(dataToShow);
   aqiCircleSpan3.classList.add("r-14");
 //   aqiCircleSpan3.textContent = "普通";
   aqiCircleSpan3.textContent = aqiStatus.status;
-//========================================================================================================================
-
   
   aqiCircleTextDiv.appendChild(aqiCircleSpan2);
   aqiCircleTextDiv.appendChild(aqiCircleSpan3);
@@ -333,7 +325,13 @@ function createRightDown(dataToShow){
 
   let o3Td2 = document.createElement("td");
   o3Td2.classList.add("realtimeAirMonitor_content_rightdown_table_line_div", "td-b-20");
-  if (dataToShow){o3Td2.textContent = dataToShow.aqi};
+  if (dataToShow){
+    if (dataToShow.o3_8hr === "" || dataToShow.o3_8hr == undefined){
+      o3Td2.textContent = "NA";
+    }else{
+      o3Td2.textContent = dataToShow.o3_8hr;
+    }
+  }
 
   let o3Td3 = document.createElement("td");
   o3Td3.classList.add("realtimeAirMonitor_content_rightdown_table_line_div", "td-r-16");
@@ -353,7 +351,13 @@ function createRightDown(dataToShow){
 
   let o3Td5 = document.createElement("td");
   o3Td5.classList.add("td-b-20");
-  if (dataToShow){o3Td5.textContent = dataToShow.o3};
+  if (dataToShow){
+    if (dataToShow.o3 === "" || dataToShow.o3 == undefined){
+      o3Td5.textContent = "NA";
+    }else{
+      o3Td5.textContent = dataToShow.o3;
+    }
+  }
 
   let o3Td6 = document.createElement("td");
   o3Td6.classList.add("td-r-16");
@@ -401,7 +405,13 @@ function createRightDown(dataToShow){
   let pm25Td2 = document.createElement("td");
   pm25Td2.classList.add("realtimeAirMonitor_content_rightdown_table_line_div", "td-b-20");
 //   pm25Td2.textContent = "64";
-  if (dataToShow){pm25Td2.textContent = dataToShow['pm2.5_avg']};
+  if (dataToShow){
+    if (dataToShow['pm2.5_avg'] === "" || dataToShow['pm2.5_avg'] == undefined){
+      pm25Td2.textContent = "NA";
+    }else{
+      pm25Td2.textContent = dataToShow['pm2.5_avg'];
+    }
+  }
 
   let pm25Sup = document.createElement("sup");
   pm25Sup.textContent = "3";
@@ -426,8 +436,13 @@ function createRightDown(dataToShow){
   let pm25Td5 = document.createElement("td");
   pm25Td5.classList.add("td-b-20");
 //   pm25Td5.textContent = "72";
-  if (dataToShow){pm25Td5.textContent = dataToShow['pm2.5']};
-
+  if (dataToShow){
+    if (dataToShow['pm2.5'] === "" || dataToShow['pm2.5'] == undefined){
+      pm25Td5.textContent = "NA";
+    }else{
+      pm25Td5.textContent = dataToShow['pm2.5'];
+    }
+  }
   let pm25Sup2 = document.createElement("sup");
   pm25Sup2.textContent = "3";
 
@@ -476,8 +491,13 @@ function createRightDown(dataToShow){
 
   let pm10Td2 = document.createElement("td");
   pm10Td2.classList.add("realtimeAirMonitor_content_rightdown_table_line_div", "td-b-20");
-  if (dataToShow){pm10Td2.textContent = dataToShow.pm10_avg};
-
+  if (dataToShow){
+    if (dataToShow.pm10_avg === "" || dataToShow.pm10_avg == undefined){
+      pm10Td2.textContent = "NA";
+    }else{
+      pm10Td2.textContent = dataToShow.pm10_avg;
+    }
+  }
   let pm10Sup = document.createElement("sup");
   pm10Sup.textContent = "3";
 
@@ -500,8 +520,13 @@ function createRightDown(dataToShow){
 
   let pm10Td5 = document.createElement("td");
   pm10Td5.classList.add("td-b-20");
-  if (dataToShow){pm10Td5.textContent = dataToShow.pm10};
-
+  if (dataToShow){
+    if (dataToShow.pm10 === "" || dataToShow.pm10 == undefined){
+      pm10Td5.textContent = "NA";
+    }else{
+      pm10Td5.textContent = dataToShow.pm10;
+    }
+  }
   let pm10Sup2 = document.createElement("sup");
   pm10Sup2.textContent = "3";
 
@@ -548,8 +573,13 @@ function createRightDown(dataToShow){
   let coTd2 = document.createElement("td");
   coTd2.classList.add("realtimeAirMonitor_content_rightdown_table_line_div", "td-b-20");
   // coTd2.textContent = "64";
-  if (dataToShow){coTd2.textContent = dataToShow.co_8hr};
-
+  if (dataToShow){
+    if (dataToShow.co_8hr === "" || dataToShow.co_8hr == undefined){
+      coTd2.textContent = "NA";
+    }else{
+      coTd2.textContent = dataToShow.co_8hr;
+    }
+  }
   let coTd3 = document.createElement("td");
   coTd3.classList.add("realtimeAirMonitor_content_rightdown_table_line_div", "td-r-16");
   coTd3.textContent = "ppb";
@@ -569,8 +599,13 @@ function createRightDown(dataToShow){
   let coTd5 = document.createElement("td");
   coTd5.classList.add("td-b-20");
 //   coTd5.textContent = "72";
-  if (dataToShow){coTd5.textContent = dataToShow.co};
-
+  if (dataToShow){
+    if (dataToShow.co === "" || dataToShow.co == undefined){
+      coTd5.textContent = "NA";
+    }else{
+      coTd5.textContent = dataToShow.co;
+    }
+  }
   let coTd6 = document.createElement("td");
   coTd6.classList.add("td-r-16");
   coTd6.textContent = "ppb";
@@ -616,8 +651,13 @@ function createRightDown(dataToShow){
   let so2Td2 = document.createElement("td");
   so2Td2.classList.add("td-b-20");
 //   so2Td2.textContent = "64";
-  if (dataToShow){so2Td2.textContent = dataToShow.so2};
-
+  if (dataToShow){
+    if (dataToShow.so2 === "" || dataToShow.so2 == undefined){
+      so2Td2.textContent = "NA";
+    }else{
+      so2Td2.textContent = dataToShow.so2;
+    }
+  }
   let so2Td3 = document.createElement("td");
   so2Td3.classList.add("td-r-16");
   so2Td3.textContent = "ppb";
@@ -662,8 +702,13 @@ function createRightDown(dataToShow){
 
   let no2Td2 = document.createElement("td");
   no2Td2.classList.add("td-b-20");
-  if (dataToShow){no2Td2.textContent = dataToShow.no2};
-
+  if (dataToShow){
+    if (dataToShow.no2 === "" || dataToShow.no2 == undefined){
+      no2Td2.textContent = "NA";
+    }else{
+      no2Td2.textContent = dataToShow.no2;
+    }
+  }
   let no2Td3 = document.createElement("td");
   no2Td3.classList.add("td-r-16");
   no2Td3.textContent = "ppb";
