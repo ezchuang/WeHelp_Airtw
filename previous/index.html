@@ -1,11 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="./previous.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet"/>
+  <title>Air Quality台灣空氣污染即時資訊</title>
 </head>
+<header class="header">
+  <div class="div_header flex container">
+    <div class="header_div">
+      <li class="header_div_li"><a class="header_div_li_a" href="../">Air <span class="header_div_li_a_b">Quality</span></a></li>
+    </div>
+    <div class="header_div_other">
+      <li class="header_div_other_li"><a class="header_div_other_li_a b-16" href="../feature/index.html">未來預報</a></li>
+      <li class="header_div_other_li"><a class="header_div_other_li_a b-16" href="../previous/index.html">歷史監測資料</a></li>
+    </div>
+  </div>
+</header>
+
 <body>
-    
+  <div class="wrapper">
+    <div class="content">
+      <!-- 主要內容放這邊, css 請依照功能命名，並與base.css分開撰寫～ -->
+
+      <!-- 監測站歷史資料查詢 -->
+      <div class="previusTitle_div">
+        <span class="previusTitle_span ti-b-25  ">監測站歷史資料查詢</span>
+      </div>
+
+      <div class="queryTitle_div">
+        <span class="queryTitle_span m-16-k">查詢項目</span>
+      </div>
+
+      <div class="queryForm_div">
+        <div class="queryForm_cotainer_div">
+          <div class="queryForm_cotainer_locationItem_div">
+            <img src="../static/icon/location.png" alt="" style="width: 30px;height: 30px;">
+            <!-- 需要動態生成 -->
+            <div>
+              <label for="" class="m-16-k">縣市：</label>
+              <select class="queryForm_cotainer_locationItem_select" name="locationCity" id="locationCity">
+                <option value="">請選擇縣市</option>
+              </select>
+            </div>
+            &nbsp;&nbsp; &nbsp;&nbsp;
+            <div>
+              <label for=""class="m-16-k">監測站：</label>
+              <!-- 需要動態生成 -->
+              <select class="queryForm_cotainer_monitoringStation_select" name="monitoringStation"
+                id="monitoringStation">
+                <option value=""class="m-16-k">請選擇監測站</option>
+              </select>
+
+            </div>
+          </div>
+          <div class="queryForm_cotainer_monitorItem_div">
+            <img src="../static/icon/chartIcon.png" alt="" style="width: 25px;height: 25px;">
+            <label for=""class="m-16-k">監測項目：</label>
+            <div class="queryForm_cotainer_monitorItem_checkbox_div">
+              <input id="queryForm_cotainer_monitorItem_checkbox_item0" type="checkbox" name="select_moniterItem"
+                value="pm2.5">
+              <label for="queryForm_cotainer_monitorItem_checkbox_item0"
+                class="queryForm_cotainer_monitorItem_checkbox_label"class="m-16-k"><span>PM<sub>2.5</sub></span></label>
+
+              <input id="queryForm_cotainer_monitorItem_checkbox_item1" type="checkbox" name="select_moniterItem"
+                value="pm10">
+              <label for="queryForm_cotainer_monitorItem_checkbox_item1"
+                class="queryForm_cotainer_monitorItem_checkbox_label"class="m-16-k"><span>PM<sub>10</sub></span></label>
+
+              <input id="queryForm_cotainer_monitorItem_checkbox_item2" type="checkbox" name="select_moniterItem"
+                value="co">
+              <label for="queryForm_cotainer_monitorItem_checkbox_item2"
+                class="queryForm_cotainer_monitorItem_checkbox_label"class="m-16-k"><span>CO</span></label>
+
+              <input id="queryForm_cotainer_monitorItem_checkbox_item3" type="checkbox" name="select_moniterItem"
+                value="no2">
+              <label for="queryForm_cotainer_monitorItem_checkbox_item3"
+                class="queryForm_cotainer_monitorItem_checkbox_label"class="m-16-k"><span>NO<sub>2</sub></span></label>
+
+              <input id="queryForm_cotainer_monitorItem_checkbox_item4" type="checkbox" name="select_moniterItem"
+                value="so2">
+              <label for="queryForm_cotainer_monitorItem_checkbox_item4"
+                class="queryForm_cotainer_monitorItem_checkbox_label"class="m-16-k"><span>SO<sub>2</sub></span></label>
+
+              <input id="queryForm_cotainer_monitorItem_checkbox_item5" type="checkbox" name="select_moniterItem"
+                  value="aqi">
+                <label for="queryForm_cotainer_monitorItem_checkbox_item5" class="queryForm_cotainer_monitorItem_checkbox_label">AQI</label>
+
+            </div>
+
+          </div>
+          <button class="queryForm_cotainer_button" id="queryForm_cotainer_monitorItem_button" onclick="createChart()">
+            <img src="../static/icon/search.png" alt="" style="width: 25px;height: 25px;">
+            <span class="b-16-w ">更新查詢</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="queryResultsTitle_div">
+        <span class="queryResultsTitle_span1 m-16-k">逐日歷史濃度變化 </span>
+        <span class="queryResultsTitle_span2" id="queryResultsItem_span"></span>
+      </div>
+
+      <div class="queryResultsChart">
+        <canvas id="myChart">Your browser does not support the canvas element.</canvas>
+        <!-- <img src="../static/picture/chartExample.png" alt=""> -->
+      </div>
+
+    </div>
+  </div>
+  <footer class="footer flex">
+    <div class="footer flex">
+      <div class="footer_div">
+        <p class="footer_div_p">COPYRIGHT @ 2023 Air Quality</p>
+      </div>
+    </div>
+  </footer>
 </body>
+
+<script src="chart.js"></script>
+<script src="./site.js"></script>
+
 </html>

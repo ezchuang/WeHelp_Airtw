@@ -1,0 +1,172 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.previusTitle_div, .queryTitle_div, .queryForm_div, .queryResultsTitle_div { 
+    width: 1200px;
+}
+
+.previusTitle_div {
+    margin-top: 20px;
+    height: 50px;
+    background-color: rgba(222, 241, 255, 1);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.previusTitle_span {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.queryTitle_span {
+    padding-left: 20px;
+}
+
+.queryForm_div{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(222, 241, 255, 1);
+    border-radius: 10px;
+    min-height: 200px;
+    position: relative;
+}
+.queryForm_cotainer_button {
+    position: absolute;
+    inset: auto 20px 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 125px;
+    height: 46px;
+    background-color:  rgba(0, 133, 255, 1);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.queryForm_cotainer_div { 
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.queryForm_cotainer_locationItem_div, .queryForm_cotainer_monitorItem_div {
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.queryForm_cotainer_monitorItem_checkbox_div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.queryForm_cotainer_monitorItem_checkbox_div > label {
+    margin: 5px 0px 5px 5px;  
+}
+.queryForm_cotainer_monitorItem_checkbox_div>input{
+    appearance: none;
+    
+}
+
+.queryForm_cotainer_monitorItem_checkbox_label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 35px;
+    background-color: white;
+    border-radius: 20px;
+    transition: color 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+/* 當input被選中時，改變其後面的label的顏色 */
+.queryForm_cotainer_monitorItem_checkbox_div>input:checked + .queryForm_cotainer_monitorItem_checkbox_label {
+    background-color: rgb(57, 168, 248);
+    color: white;
+}
+
+
+
+.queryResultsTitle_span1 {
+    padding-left: 20px;
+}
+
+
+.queryForm_cotainer_locationItem_select, .queryForm_cotainer_monitoringStation_select {
+    height: 40px;
+    width: 140px;
+    border-radius: 5px;
+    padding: 0 0 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.queryResultsChart{
+    height: 500px;
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 1200px) {
+    .previusTitle_div, .queryTitle_div, .queryForm_div, .queryResultsTitle_div, .queryResultsChart {
+        width: calc(100% - 40px)!important;
+        max-width: 1200px!important;
+        
+    }
+    .queryForm_div {
+        padding: 20px;
+    }
+
+  }
+
+@media (max-width: 850px) {
+    .queryForm_div{
+        min-height: 300px;
+    }
+    
+}
+
+@media (max-width: 800px) {
+    .queryForm_cotainer_div{
+        gap: 20px;
+    }
+    .queryForm_cotainer_locationItem_div>img {
+        display: none;
+        appearance: none;
+    }
+    .queryForm_cotainer_locationItem_div>div>label {
+        width: 80px;
+        display: inline-block;
+    }
+    .queryForm_cotainer_locationItem_div, .queryForm_cotainer_monitorItem_div{
+        width: calc(100% - 20px);
+    }
+    .queryForm_cotainer_locationItem_div, .queryForm_cotainer_monitorItem_div {
+        flex-wrap: wrap;
+    }
+
+    .queryForm_cotainer_monitorItem_div>img {
+        display: none;
+    }
+    .queryForm_cotainer_button { 
+        position:unset;
+    }
+    .queryForm_cotainer_monitorItem_checkbox_div {
+        flex-wrap: wrap;
+    }
+
+}
