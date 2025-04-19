@@ -48,5 +48,5 @@ function changeImage(sitename){
     let site = document.querySelector(".realtimePic_div_div")
     // let imgTarget = site.children[1]
     let imgTarget = site.children[1].children[0]
-    imgTarget.setAttribute("src", `https://airtw.epa.gov.tw/AirSitePic/${yyyy + mm + dd}/${siteID}-${yyyy + mm + dd + hh}00.jpg`)
+    imgTarget.setAttribute("src", `https://airtw.moenv.gov.tw/AirSitePic/${yyyy + mm + dd}/${siteID}-${yyyy + mm + dd + hh}00.jpg`)
 }
